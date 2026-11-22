@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8" />
@@ -31,7 +31,6 @@
 
     body {
       background-color: #060608;
-      /* Sports Stadium + Carbon Luxury Gold CSS Background */
       background-image:
         radial-gradient(ellipse 80% 45% at 50% 0%, rgba(255, 208, 0, 0.16), transparent 70%),
         radial-gradient(circle at 15% 80%, rgba(0, 230, 118, 0.06), transparent 45%),
@@ -54,7 +53,6 @@
       overflow-x: hidden;
     }
 
-    /* Decorative Sports Pitch Ring Watermark */
     body::before {
       content: "";
       position: fixed;
@@ -108,7 +106,6 @@
 
     .header-actions { display: flex; gap: 7px; flex-wrap: wrap; align-items: center; }
 
-    /* Live Pulse */
     @keyframes pulseDot {
       0%, 100% { transform: scale(1); opacity: 1; }
       50% { transform: scale(1.35); opacity: 0.55; }
@@ -119,7 +116,6 @@
       animation: pulseDot 1.5s infinite;
     }
 
-    /* Announcement Banner */
     .announcement-bar {
       background: linear-gradient(90deg, rgba(255, 208, 0, 0.16), rgba(245, 158, 11, 0.12), rgba(255, 208, 0, 0.16));
       border-bottom: 1px solid rgba(255, 208, 0, 0.4);
@@ -132,92 +128,101 @@
 
     .container { max-width: 1220px; margin: 18px auto; padding: 0 14px; }
 
-    /* Luxury Top Sponsor Frame Card */
-    .sponsor-hero {
-      background: linear-gradient(145deg, rgba(26, 23, 12, 0.95), rgba(12, 13, 18, 0.97) 55%, rgba(20, 28, 20, 0.95));
-      backdrop-filter: blur(14px);
-      border: 2px solid var(--primary);
-      border-radius: 22px;
-      padding: 18px 20px;
+    /* Dual Leadership Showcase (Sponsor + General Manager) */
+    .leadership-wrap {
       margin-bottom: 18px;
+    }
+
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 14px;
+    }
+
+    .leader-card {
+      background: linear-gradient(145deg, rgba(26, 23, 12, 0.95), rgba(12, 13, 18, 0.97) 60%, rgba(20, 26, 20, 0.95));
+      backdrop-filter: blur(14px);
+      border: 1.5px solid var(--primary);
+      border-radius: 20px;
+      padding: 16px 18px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.65), 0 0 28px rgba(255, 208, 0, 0.14);
+      gap: 15px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 22px rgba(255, 208, 0, 0.10);
       position: relative;
       overflow: hidden;
     }
 
-    .sponsor-hero::after {
+    .leader-card::after {
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; height: 3px;
       background: linear-gradient(90deg, transparent, var(--primary), #fff3b0, var(--primary), transparent);
     }
 
-    .sponsor-profile { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-
-    .sponsor-frame {
+    .leader-frame {
       position: relative;
-      width: 96px;
-      height: 96px;
+      width: 88px;
+      height: 88px;
       padding: 3px;
-      border-radius: 20px;
+      border-radius: 18px;
       background: linear-gradient(135deg, #ffd000, #f59e0b, #fff099, #d97706);
-      box-shadow: 0 0 24px rgba(255, 208, 0, 0.38);
+      box-shadow: 0 0 20px rgba(255, 208, 0, 0.35);
       flex-shrink: 0;
     }
 
-    .sponsor-avatar {
+    .leader-avatar {
       width: 100%;
       height: 100%;
-      border-radius: 17px;
+      border-radius: 15px;
       object-fit: cover;
       object-position: center top;
       background: linear-gradient(135deg, #11131a, #1d222e);
       display: flex; align-items: center; justify-content: center;
-      font-weight: 900; font-size: 32px; color: var(--primary);
+      font-weight: 900; font-size: 30px; color: var(--primary);
     }
 
     .verified-badge {
       position: absolute;
-      bottom: -5px; right: -5px;
-      width: 26px; height: 26px;
+      bottom: -4px; right: -4px;
+      width: 24px; height: 24px;
       background: #1d9bf0;
-      border: 2.5px solid #090a0f;
+      border: 2px solid #090a0f;
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      color: #fff; font-size: 13px; font-weight: 900;
+      color: #fff; font-size: 12px; font-weight: 900;
       box-shadow: 0 2px 8px rgba(0,0,0,0.6);
     }
 
-    .sponsor-info h3 {
-      font-size: 18px; font-weight: 900; color: #fff;
-      display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+    .leader-info { flex: 1; min-width: 0; }
+    .leader-info h3 {
+      font-size: 17px; font-weight: 900; color: #fff;
+      display: flex; align-items: center; gap: 7px; flex-wrap: wrap;
     }
-    .sponsor-info small { font-size: 13px; color: var(--primary); font-weight: 700; display: block; margin-top: 2px; }
-    .sponsor-info .sub-note { font-size: 11px; color: var(--text-muted); display: block; margin-top: 2px; }
+    .leader-info small { font-size: 12px; color: var(--primary); font-weight: 700; display: block; margin-top: 2px; }
+    .leader-info .sub-note { font-size: 11px; color: var(--text-muted); display: block; margin-top: 2px; }
+    .leader-admin-btns { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
 
-    .sponsor-actions {
-      display: flex; flex-direction: column; gap: 8px; align-items: flex-end;
+    .wa-group-banner {
+      margin-top: 12px;
+      text-align: center;
     }
 
     .btn-wa-group {
       background: linear-gradient(135deg, #25d366, #128c7e);
       color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      padding: 10px 18px;
-      border-radius: 12px;
-      font-size: 13px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      padding: 11px 22px;
+      border-radius: 14px;
+      font-size: 14px;
       font-weight: 900;
-      display: inline-flex; align-items: center; gap: 8px;
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
       text-decoration: none;
-      box-shadow: 0 6px 18px rgba(37, 211, 102, 0.28);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.28);
       transition: 0.2s;
+      width: 100%;
     }
-    .btn-wa-group:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37, 211, 102, 0.42); }
+    .btn-wa-group:hover { transform: translateY(-1px); box-shadow: 0 8px 26px rgba(37, 211, 102, 0.45); }
 
     /* Cards & Controls */
     .card {
@@ -295,10 +300,10 @@
     .btn-danger:hover { background: var(--danger); color: #fff; }
     .btn-outline { background: rgba(10, 11, 16, 0.8); color: var(--text); border: 1px solid rgba(255, 255, 255, 0.18); }
     .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
-    .btn-sm { padding: 6px 10px; font-size: 11px; border-radius: 8px; }
+    .btn-sm { padding: 5px 9px; font-size: 11px; border-radius: 8px; }
     .btn:disabled { opacity: 0.45; cursor: not-allowed; }
 
-    .badge { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; }
+    .badge { display: inline-flex; align-items: center; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 700; }
     .badge-yellow { background: rgba(255, 208, 0, 0.16); color: var(--primary); border: 1px solid rgba(255, 208, 0, 0.4); }
     .badge-cyan { background: rgba(255, 255, 255, 0.08); color: #fff; border: 1px solid rgba(255, 255, 255, 0.22); }
     .badge-green { background: rgba(0, 230, 118, 0.16); color: var(--emerald); border: 1px solid rgba(0, 230, 118, 0.35); }
@@ -319,7 +324,7 @@
     .league-pill h4 { font-size: 14px; margin-bottom: 3px; color: #fff; }
     .league-pill span { font-size: 11px; color: var(--text-muted); }
 
-    /* Stats Strip inside League Card */
+    /* Stats Strip */
     .stats-strip {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
@@ -336,7 +341,6 @@
     .stat-box small { display: block; font-size: 11px; color: var(--text-muted); }
     .stat-box strong { font-size: 16px; font-weight: 900; color: var(--primary); }
 
-    /* League Info Grid */
     .info-pills {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
@@ -457,7 +461,7 @@
       header, .no-print { display: none !important; }
       body { background: #fff; color: #000; }
       body::before { display: none; }
-      .card, .match-card, .sponsor-hero { border: 1px solid #ccc; background: #fff; color: #000; box-shadow: none; }
+      .card, .match-card, .leader-card { border: 1px solid #ccc; background: #fff; color: #000; box-shadow: none; }
       th { background: #eee; color: #000; }
     }
   </style>
@@ -480,7 +484,11 @@
 <div id="announcementBar" class="announcement-bar hidden"></div>
 
 <div class="container">
-  <div id="sponsorHero" class="sponsor-hero"></div>
+  <!-- Hidden File Inputs for Sponsor & General Manager Photos -->
+  <input type="file" id="bgFileInput" accept="image/*" class="hidden" onchange="handleBgUpload(event)" />
+  <input type="file" id="managerFileInput" accept="image/*" class="hidden" onchange="handleManagerUpload(event)" />
+
+  <div id="sponsorHero" class="leadership-wrap"></div>
   <div id="leaguesBar" class="leagues-bar no-print"></div>
   <div id="mainContent">
     <div class="card" style="text-align: center; padding: 40px;">...</div>
@@ -781,14 +789,19 @@
       sponsorTitle: 'شفیق الله محمدی',
       sponsorRole: 'رییس گروه وحدت • اسپانسر رسمی لیگ‌ها',
       sponsorNote: 'حامی ورزش و تورنمنت‌های رسمی ای‌فوتبال',
-      joinWaGroupBtn: '💬 عضویت در گروپ واتساپ',
+      sponsorBadge: 'اسپانسر رسمی',
+      managerTitle: 'ابوبکر عزیزی',
+      managerRole: 'مدیر عمومی لیگ‌های وحدت گروپ',
+      managerNote: 'برگزارکننده و ناظر کل مسابقات',
+      managerBadge: 'مدیر عمومی',
+      uploadPhotoBtn: '🖼️ انتخاب / تغییر عکس',
+      removePhotoBtn: 'حذف عکس',
+      joinWaGroupBtn: '💬 عضویت در گروپ واتساپ وحدت گروپ',
       waGroupSetupBtn: '💬 گروپ واتساپ',
       online: 'آنلاین',
       connecting: '⏳ اتصال...',
       adminActive: '👑 مدیر فعال',
       newLeague: '+ لیگ جدید',
-      sponsorPhotoBtn: '🖼️ عکس رییس گروه',
-      removePhotoBtn: 'حذف عکس',
       announcementBtn: '📢 اعلان',
       changePassBtn: '🔑 رمز',
       backupBtn: 'پشتیبان',
@@ -866,22 +879,27 @@
       exportTablePng: '📸 عکس جدول',
       exportMatchesPng: '📸 عکس بازی‌ها',
       visitorHint: '💡 برای انجام بازی خود، روی دکمه «واتساپ» کنار نام حریف بزنید تا مستقیم وارد چت شوید.',
-      footerText: 'برگزارکننده: وحدت گروپ | با حمایت و اسپانسری رییس گروه وحدت: شفیق الله محمدی'
+      footerText: 'برگزارکننده: وحدت گروپ | اسپانسر رسمی: شفیق الله محمدی | مدیر عمومی: ابوبکر عزیزی'
     },
     en: {
       brandTitle: 'Wahdat Group',
       brandSubtitle: 'eFootball Online League Platform',
       sponsorTitle: 'Shafiqullah Mohammadi',
-      sponsorRole: 'President of Wahdat Group • Official League Sponsor',
+      sponsorRole: 'President of Wahdat Group • Official Sponsor',
       sponsorNote: 'Supporting eFootball Esports & Tournaments',
-      joinWaGroupBtn: '💬 Join WhatsApp Group',
+      sponsorBadge: 'Official Sponsor',
+      managerTitle: 'Abubaker Azizi',
+      managerRole: 'General Manager of Wahdat Group Leagues',
+      managerNote: 'Chief Tournament Organizer & Supervisor',
+      managerBadge: 'General Manager',
+      uploadPhotoBtn: '🖼️ Upload / Change Photo',
+      removePhotoBtn: 'Remove',
+      joinWaGroupBtn: '💬 Join Wahdat Group WhatsApp',
       waGroupSetupBtn: '💬 WA Group Link',
       online: 'Online',
       connecting: '⏳ Connecting...',
       adminActive: '👑 Admin Active',
       newLeague: '+ New League',
-      sponsorPhotoBtn: '🖼️ Sponsor Photo',
-      removePhotoBtn: 'Remove Photo',
       announcementBtn: '📢 News',
       changePassBtn: '🔑 Password',
       backupBtn: 'Backup',
@@ -959,7 +977,7 @@
       exportTablePng: '📸 Save Table Image',
       exportMatchesPng: '📸 Save Matches Image',
       visitorHint: '💡 Tap the "WhatsApp" button next to your opponent to message them directly and play your match!',
-      footerText: 'Organized by Wahdat Group | Sponsored by Shafiqullah Mohammadi'
+      footerText: 'Wahdat Group | Sponsor: Shafiqullah Mohammadi | General Manager: Abubaker Azizi'
     }
   };
 
@@ -969,6 +987,7 @@
     leagues: {},
     privatePhones: {},
     bgImage: '',
+    managerImage: '',
     announcement: '',
     whatsappGroupLink: '',
     activeLeagueId: localStorage.getItem('wahdat_active_league') || null,
@@ -1123,6 +1142,7 @@
       const val = snap.val() || {};
       state.leagues = val.leagues || {};
       state.bgImage = val.bgImage || '';
+      state.managerImage = val.managerImage || '';
       state.announcement = val.announcement || '';
       state.whatsappGroupLink = val.whatsappGroupLink || '';
       state.connected = true;
@@ -1201,11 +1221,9 @@
     }
   }
 
-  // --- Sponsor Photo, WhatsApp Group & Announcement ---
-  function handleBgUpload(e) {
-    if (!state.isAdmin) return;
-    const file = e.target.files[0];
-    if (!file) return;
+  // --- Photos Upload (Sponsor & General Manager), WhatsApp Group & Announcement ---
+  function compressAndSaveImage(file, dbPath) {
+    if (!file || !state.isAdmin) return;
     const reader = new FileReader();
     reader.onload = function(ev) {
       const img = new Image();
@@ -1219,17 +1237,31 @@
         const canvas = document.createElement('canvas');
         canvas.width = w; canvas.height = h;
         canvas.getContext('2d').drawImage(img, 0, 0, w, h);
-        await db.ref('publicData/bgImage').set(canvas.toDataURL('image/jpeg', 0.82));
+        await db.ref(dbPath).set(canvas.toDataURL('image/jpeg', 0.82));
       };
       img.src = ev.target.result;
     };
     reader.readAsDataURL(file);
+  }
+
+  function handleBgUpload(e) {
+    compressAndSaveImage(e.target.files[0], 'publicData/bgImage');
+    e.target.value = '';
+  }
+
+  function handleManagerUpload(e) {
+    compressAndSaveImage(e.target.files[0], 'publicData/managerImage');
     e.target.value = '';
   }
 
   async function clearBgImage() {
     if (!state.isAdmin || !confirm(uiState.lang === 'fa' ? 'عکس رییس گروه حذف شود؟' : 'Remove sponsor photo?')) return;
     await db.ref('publicData/bgImage').set('');
+  }
+
+  async function clearManagerImage() {
+    if (!state.isAdmin || !confirm(uiState.lang === 'fa' ? 'عکس مدیر عمومی حذف شود؟' : 'Remove manager photo?')) return;
+    await db.ref('publicData/managerImage').set('');
   }
 
   function openWaGroupModal() {
@@ -1941,7 +1973,7 @@
     ctx.closePath();
   }
 
-  function loadSponsorImg(src) {
+  function loadPosterImg(src) {
     return new Promise((resolve) => {
       if (!src) { resolve(null); return; }
       const img = new Image();
@@ -1949,6 +1981,45 @@
       img.onerror = () => resolve(null);
       img.src = src;
     });
+  }
+
+  function drawFramedPosterPortrait(ctx, cx, cy, rad, img, fallbackLetter) {
+    ctx.save();
+    drawRoundRect(ctx, cx - rad - 3, cy - rad - 3, (rad + 3) * 2, (rad + 3) * 2, 16);
+    const frameGrad = ctx.createLinearGradient(cx - rad, cy - rad, cx + rad, cy + rad);
+    frameGrad.addColorStop(0, '#ffd000');
+    frameGrad.addColorStop(1, '#f59e0b');
+    ctx.fillStyle = frameGrad;
+    ctx.fill();
+
+    drawRoundRect(ctx, cx - rad, cy - rad, rad * 2, rad * 2, 14);
+    ctx.clip();
+    if (img) {
+      const ratio = Math.max((rad * 2) / img.width, (rad * 2) / img.height);
+      const dw = img.width * ratio;
+      const dh = img.height * ratio;
+      ctx.drawImage(img, cx - dw / 2, cy - rad, dw, dh);
+    } else {
+      ctx.fillStyle = '#181922';
+      ctx.fillRect(cx - rad, cy - rad, rad * 2, rad * 2);
+      ctx.fillStyle = '#ffd000';
+      ctx.font = 'bold 30px Tahoma, Arial';
+      ctx.textAlign = 'center';
+      ctx.fillText(fallbackLetter, cx, cy + 10);
+    }
+    ctx.restore();
+
+    ctx.beginPath();
+    ctx.arc(cx + rad - 4, cy + rad - 4, 11, 0, Math.PI * 2);
+    ctx.fillStyle = '#1d9bf0';
+    ctx.fill();
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = '#14151d';
+    ctx.stroke();
+    ctx.fillStyle = '#ffffff';
+    ctx.font = 'bold 12px Arial';
+    ctx.textAlign = 'center';
+    ctx.fillText('✓', cx + rad - 4, cy + rad);
   }
 
   function paintPosterBackdrop(ctx, w, h) {
@@ -1959,14 +2030,12 @@
     ctx.fillStyle = bgGrad;
     ctx.fillRect(0, 0, w, h);
 
-    // Top Gold Spotlight Glow
     const spot = ctx.createRadialGradient(w / 2, 0, 20, w / 2, 0, w * 0.75);
     spot.addColorStop(0, 'rgba(255, 208, 0, 0.22)');
     spot.addColorStop(1, 'rgba(255, 208, 0, 0)');
     ctx.fillStyle = spot;
     ctx.fillRect(0, 0, w, 340);
 
-    // Diagonal Sports Carbon Stripes
     ctx.save();
     ctx.strokeStyle = 'rgba(255, 208, 0, 0.035)';
     ctx.lineWidth = 10;
@@ -1978,7 +2047,6 @@
     }
     ctx.restore();
 
-    // Outer Luxury Gold Frame
     ctx.strokeStyle = 'rgba(255, 208, 0, 0.55)';
     ctx.lineWidth = 4;
     ctx.strokeRect(10, 10, w - 20, h - 20);
@@ -1992,8 +2060,7 @@
     ctx.fillRect(10, h - 18, w - 20, 8);
   }
 
-  function paintPosterHeader(ctx, w, titleMain, titleSub, sponsorImg) {
-    // Header Banner Card
+  function paintPosterHeader(ctx, w, titleMain, titleSub, sponsorImg, managerImg) {
     drawRoundRect(ctx, 28, 30, w - 56, 138, 18);
     ctx.fillStyle = 'rgba(20, 21, 29, 0.92)';
     ctx.fill();
@@ -2001,54 +2068,18 @@
     ctx.lineWidth = 2;
     ctx.stroke();
 
-    // Sponsor Framed Portrait on Left
-    const cx = 100, cy = 99, rad = 42;
-    ctx.save();
-    drawRoundRect(ctx, cx - rad - 3, cy - rad - 3, (rad + 3) * 2, (rad + 3) * 2, 16);
-    const frameGrad = ctx.createLinearGradient(cx - rad, cy - rad, cx + rad, cy + rad);
-    frameGrad.addColorStop(0, '#ffd000');
-    frameGrad.addColorStop(1, '#f59e0b');
-    ctx.fillStyle = frameGrad;
-    ctx.fill();
+    // Left Portrait: Sponsor (Shafiqullah Mohammadi)
+    drawFramedPosterPortrait(ctx, 92, 99, 40, sponsorImg, 'ش');
+    // Right Portrait: General Manager (Abubaker Azizi)
+    drawFramedPosterPortrait(ctx, w - 92, 99, 40, managerImg, 'ا');
 
-    drawRoundRect(ctx, cx - rad, cy - rad, rad * 2, rad * 2, 14);
-    ctx.clip();
-    if (sponsorImg) {
-      const ratio = Math.max((rad * 2) / sponsorImg.width, (rad * 2) / sponsorImg.height);
-      const dw = sponsorImg.width * ratio;
-      const dh = sponsorImg.height * ratio;
-      ctx.drawImage(sponsorImg, cx - dw / 2, cy - rad, dw, dh);
-    } else {
-      ctx.fillStyle = '#181922';
-      ctx.fillRect(cx - rad, cy - rad, rad * 2, rad * 2);
-      ctx.fillStyle = '#ffd000';
-      ctx.font = 'bold 34px Tahoma, Arial';
-      ctx.textAlign = 'center';
-      ctx.fillText('W', cx, cy + 12);
-    }
-    ctx.restore();
-
-    // Verified Blue Tick on Sponsor Portrait
-    ctx.beginPath();
-    ctx.arc(cx + rad - 4, cy + rad - 4, 12, 0, Math.PI * 2);
-    ctx.fillStyle = '#1d9bf0';
-    ctx.fill();
-    ctx.lineWidth = 2;
-    ctx.strokeStyle = '#14151d';
-    ctx.stroke();
-    ctx.fillStyle = '#ffffff';
-    ctx.font = 'bold 13px Arial';
-    ctx.textAlign = 'center';
-    ctx.fillText('✓', cx + rad - 4, cy + rad + 1);
-
-    // Titles
+    // Centered Titles
     ctx.textAlign = 'center';
     ctx.fillStyle = '#ffd000';
-    ctx.font = 'bold 28px Tahoma, Arial';
-    ctx.fillText(titleMain, w / 2 + 35, 72);
+    ctx.font = 'bold 27px Tahoma, Arial';
+    ctx.fillText(titleMain, w / 2, 70, w - 310);
 
-    // Pill Subtitle
-    drawRoundRect(ctx, w / 2 - 175, 86, 420, 34, 17);
+    drawRoundRect(ctx, w / 2 - 210, 84, 420, 34, 17);
     ctx.fillStyle = 'rgba(255, 208, 0, 0.16)';
     ctx.fill();
     ctx.strokeStyle = 'rgba(255, 208, 0, 0.5)';
@@ -2057,11 +2088,11 @@
 
     ctx.fillStyle = '#ffffff';
     ctx.font = 'bold 17px Tahoma, Arial';
-    ctx.fillText(titleSub, w / 2 + 35, 109);
+    ctx.fillText(titleSub, w / 2, 107, 400);
 
     ctx.fillStyle = '#00e676';
-    ctx.font = 'bold 14px Tahoma, Arial';
-    ctx.fillText('اسپانسر رسمی لیگ‌ها: شفیق الله محمدی (رییس گروه وحدت)', w / 2 + 35, 148);
+    ctx.font = 'bold 13px Tahoma, Arial';
+    ctx.fillText('اسپانسر: شفیق الله محمدی  |  مدیر عمومی: ابوبکر عزیزی', w / 2, 148, w - 300);
   }
 
   async function exportStandingsImage(groupIdx) {
@@ -2069,7 +2100,10 @@
     if (!league) return;
     const group = toArray(league.groups)[groupIdx];
     const standings = computeStandings(league, group);
-    const sponsorImg = await loadSponsorImg(state.bgImage);
+    const [sponsorImg, managerImg] = await Promise.all([
+      loadPosterImg(state.bgImage),
+      loadPosterImg(state.managerImage)
+    ]);
 
     const w = 940, rowH = 50, headerH = 192, footerH = 74;
     const h = headerH + (standings.length + 1) * rowH + footerH;
@@ -2078,9 +2112,8 @@
     const ctx = canvas.getContext('2d');
 
     paintPosterBackdrop(ctx, w, h);
-    paintPosterHeader(ctx, w, `وحدت گروپ • ${league.name}`, `${group.name} — جدول رده‌بندی رسمی`, sponsorImg);
+    paintPosterHeader(ctx, w, `وحدت گروپ • ${league.name}`, `${group.name} — جدول رده‌بندی رسمی`, sponsorImg, managerImg);
 
-    // Table Card Container
     const y0 = headerH;
     drawRoundRect(ctx, 28, y0, w - 56, (standings.length + 1) * rowH + 6, 16);
     ctx.fillStyle = 'rgba(15, 16, 22, 0.94)';
@@ -2089,7 +2122,6 @@
     ctx.lineWidth = 1.5;
     ctx.stroke();
 
-    // Header Row
     drawRoundRect(ctx, 32, y0 + 4, w - 64, rowH - 4, 12);
     const headGrad = ctx.createLinearGradient(32, y0, w - 32, y0);
     headGrad.addColorStop(0, '#ffd000');
@@ -2126,7 +2158,6 @@
         ctx.fillRect(36, y + 6, 5, rowH - 18);
       }
 
-      // Rank Medal / Badge
       ctx.textAlign = 'center';
       ctx.font = 'bold 17px Tahoma, Arial';
       if (i === 0) { ctx.fillStyle = '#ffd000'; ctx.fillText('🥇 1', 72, y + 29); }
@@ -2134,13 +2165,11 @@
       else if (i === 2) { ctx.fillStyle = '#f59e0b'; ctx.fillText('🥉 3', 72, y + 29); }
       else { ctx.fillStyle = '#94a3b8'; ctx.fillText(String(i + 1), 72, y + 29); }
 
-      // Name
       ctx.fillStyle = isTop2 ? '#ffffff' : '#e2e8f0';
       ctx.font = 'bold 17px Tahoma, Arial';
       ctx.textAlign = 'right';
-      ctx.fillText(row.name.slice(0, 24), 345, y + 29);
+      ctx.fillText(row.name.slice(0, 24), 345, y + 29, 230);
 
-      // Stats
       ctx.textAlign = 'center';
       ctx.font = '16px Tahoma, Arial';
       ctx.fillStyle = '#cbd5e1';
@@ -2154,7 +2183,6 @@
       ctx.fillStyle = row.gd >= 0 ? '#ffe066' : '#ff6b78';
       ctx.fillText(row.gd > 0 ? `+${row.gd}` : String(row.gd), 745, y + 29);
 
-      // Points Golden Pill
       drawRoundRect(ctx, 815, y + 6, 60, rowH - 18, 10);
       ctx.fillStyle = 'rgba(255, 208, 0, 0.2)';
       ctx.fill();
@@ -2166,7 +2194,6 @@
       ctx.fillText(String(row.pts), 845, y + 28);
     });
 
-    // Footer
     ctx.fillStyle = '#00e676';
     ctx.font = 'bold 13px Tahoma, Arial';
     ctx.textAlign = 'right';
@@ -2184,7 +2211,10 @@
   async function exportMatchesImage(title, matchItems) {
     const league = getActiveLeague();
     if (!league) return;
-    const sponsorImg = await loadSponsorImg(state.bgImage);
+    const [sponsorImg, managerImg] = await Promise.all([
+      loadPosterImg(state.bgImage),
+      loadPosterImg(state.managerImage)
+    ]);
     const items = matchItems.slice(0, 24);
 
     const w = 940, rowH = 62, headerH = 192, footerH = 65;
@@ -2194,7 +2224,7 @@
     const ctx = canvas.getContext('2d');
 
     paintPosterBackdrop(ctx, w, h);
-    paintPosterHeader(ctx, w, `وحدت گروپ • ${league.name}`, title, sponsorImg);
+    paintPosterHeader(ctx, w, `وحدت گروپ • ${league.name}`, title, sponsorImg, managerImg);
 
     items.forEach((m, i) => {
       const y = headerH + i * rowH;
@@ -2204,7 +2234,6 @@
       const s2 = m.s2 !== '' && m.s2 !== undefined ? String(m.s2) : '';
       const hasScore = s1 !== '' && s2 !== '';
 
-      // 3D Match Card
       drawRoundRect(ctx, 28, y, w - 56, rowH - 8, 14);
       const cardGrad = ctx.createLinearGradient(28, y, w - 28, y + rowH);
       cardGrad.addColorStop(0, 'rgba(26, 27, 36, 0.96)');
@@ -2216,7 +2245,6 @@
       ctx.lineWidth = 1.6;
       ctx.stroke();
 
-      // Match Number Badge
       drawRoundRect(ctx, w - 82, y + 12, 40, 30, 8);
       ctx.fillStyle = 'rgba(255, 208, 0, 0.16)';
       ctx.fill();
@@ -2225,18 +2253,18 @@
       ctx.textAlign = 'center';
       ctx.fillText(`#${i + 1}`, w - 62, y + 32);
 
-      // Player 1 (Right side of center)
+      // Player 1 on Right
       ctx.fillStyle = (hasScore && parseInt(s1) > parseInt(s2)) ? '#00e676' : '#ffffff';
       ctx.font = 'bold 18px Tahoma, Arial';
       ctx.textAlign = 'right';
-      ctx.fillText(p1.slice(0, 22), w - 102, y + 33);
+      ctx.fillText(p1.slice(0, 22), w - 102, y + 33, 285);
 
-      // Player 2 (Left side of center)
+      // Player 2 on Left
       ctx.fillStyle = (hasScore && parseInt(s2) > parseInt(s1)) ? '#00e676' : '#ffffff';
       ctx.textAlign = 'left';
-      ctx.fillText(p2.slice(0, 22), 54, y + 33);
+      ctx.fillText(p2.slice(0, 22), 54, y + 33, 285);
 
-      // Center Score / VS Pill
+      // Center Pill (s1 aligned RIGHT next to p1, s2 aligned LEFT next to p2)
       drawRoundRect(ctx, w / 2 - 64, y + 9, 128, 36, 12);
       if (hasScore) {
         const pillGrad = ctx.createLinearGradient(w / 2 - 64, y, w / 2 + 64, y);
@@ -2264,9 +2292,9 @@
     });
 
     ctx.fillStyle = '#ffd000';
-    ctx.font = 'bold 14px Tahoma, Arial';
+    ctx.font = 'bold 13px Tahoma, Arial';
     ctx.textAlign = 'center';
-    ctx.fillText('⚽ Wahdat Group Official eFootball Tournament • Sponsor: Shafiqullah Mohammadi', w / 2, h - 28);
+    ctx.fillText('⚽ Wahdat Group • Sponsor: Shafiqullah Mohammadi • General Manager: Abubaker Azizi', w / 2, h - 28);
 
     const a = document.createElement('a');
     a.href = canvas.toDataURL('image/png');
@@ -2315,9 +2343,6 @@
         <span class="badge badge-green">${t('adminActive')}</span>
         ${langBtn}
         <button class="btn btn-primary" onclick="openModal('createModal')">${t('newLeague')}</button>
-        <button class="btn btn-accent btn-sm" onclick="document.getElementById('bgFileInput').click()">${t('sponsorPhotoBtn')}</button>
-        <input type="file" id="bgFileInput" accept="image/*" class="hidden" onchange="handleBgUpload(event)" />
-        ${state.bgImage ? `<button class="btn btn-danger btn-sm" onclick="clearBgImage()">${t('removePhotoBtn')}</button>` : ''}
         <button class="btn btn-outline btn-sm" onclick="openWaGroupModal()">${t('waGroupSetupBtn')}</button>
         <button class="btn btn-outline btn-sm" onclick="openAnnouncementModal()">${t('announcementBtn')}</button>
         <button class="btn btn-outline btn-sm" onclick="openModal('changePassModal')">${t('changePassBtn')}</button>
@@ -2345,35 +2370,62 @@
 
   function renderSponsorHero() {
     const box = document.getElementById('sponsorHero');
-    const avatarHtml = state.bgImage
-      ? `<img src="${state.bgImage}" class="sponsor-avatar" alt="Shafiqullah Mohammadi" />`
-      : `<div class="sponsor-avatar">W</div>`;
+    const sponsorAvatar = state.bgImage
+      ? `<img src="${state.bgImage}" class="leader-avatar" alt="Shafiqullah Mohammadi" />`
+      : `<div class="leader-avatar">ش</div>`;
+
+    const managerAvatar = state.managerImage
+      ? `<img src="${state.managerImage}" class="leader-avatar" alt="Abubaker Azizi" />`
+      : `<div class="leader-avatar">ا</div>`;
 
     box.innerHTML = `
-      <div class="sponsor-profile">
-        <div class="sponsor-frame">
-          ${avatarHtml}
-          <span class="verified-badge">✓</span>
+      <div class="leadership-grid">
+        <!-- Card 1: Sponsor -->
+        <div class="leader-card">
+          <div class="leader-frame">
+            ${sponsorAvatar}
+            <span class="verified-badge">✓</span>
+          </div>
+          <div class="leader-info">
+            <h3>${t('sponsorTitle')} <span class="badge badge-yellow">${t('sponsorBadge')}</span></h3>
+            <small>${t('sponsorRole')}</small>
+            <span class="sub-note">${t('sponsorNote')}</span>
+            ${state.isAdmin ? `
+              <div class="leader-admin-btns no-print">
+                <button class="btn btn-sm btn-accent" onclick="document.getElementById('bgFileInput').click()">${t('uploadPhotoBtn')}</button>
+                ${state.bgImage ? `<button class="btn btn-sm btn-danger" onclick="clearBgImage()">${t('removePhotoBtn')}</button>` : ''}
+              </div>
+            ` : ''}
+          </div>
         </div>
-        <div class="sponsor-info">
-          <h3>${t('sponsorTitle')} <span class="badge badge-yellow">Official Sponsor</span></h3>
-          <small>${t('sponsorRole')}</small>
-          <span class="sub-note">${t('sponsorNote')}</span>
+
+        <!-- Card 2: General Manager (Abubaker Azizi) -->
+        <div class="leader-card">
+          <div class="leader-frame">
+            ${managerAvatar}
+            <span class="verified-badge">✓</span>
+          </div>
+          <div class="leader-info">
+            <h3>${t('managerTitle')} <span class="badge badge-green">${t('managerBadge')}</span></h3>
+            <small>${t('managerRole')}</small>
+            <span class="sub-note">${t('managerNote')}</span>
+            ${state.isAdmin ? `
+              <div class="leader-admin-btns no-print">
+                <button class="btn btn-sm btn-accent" onclick="document.getElementById('managerFileInput').click()">${t('uploadPhotoBtn')}</button>
+                ${state.managerImage ? `<button class="btn btn-sm btn-danger" onclick="clearManagerImage()">${t('removePhotoBtn')}</button>` : ''}
+              </div>
+            ` : ''}
+          </div>
         </div>
       </div>
 
-      <div class="sponsor-actions">
-        ${state.whatsappGroupLink ? `
+      ${state.whatsappGroupLink ? `
+        <div class="wa-group-banner no-print">
           <a href="${escapeHtml(state.whatsappGroupLink)}" target="_blank" rel="noopener" class="btn-wa-group">
             ${t('joinWaGroupBtn')}
           </a>
-        ` : ''}
-        ${state.isAdmin && !state.bgImage ? `
-          <button class="btn btn-sm btn-accent no-print" onclick="document.getElementById('bgFileInput').click()">
-            + ${t('sponsorPhotoBtn')}
-          </button>
-        ` : ''}
-      </div>
+        </div>
+      ` : ''}
     `;
   }
 
