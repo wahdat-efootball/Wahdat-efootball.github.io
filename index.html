@@ -2247,7 +2247,9 @@
         ctx.fillStyle = '#000000';
         ctx.font = 'bold 21px Tahoma, Arial';
         ctx.textAlign = 'center';
-        ctx.fillText(`${s1}  :  ${s2}`, w / 2, y + 34);
+        ctx.fillText(s1, w / 2 + 32, y + 34);
+        ctx.fillText(':', w / 2, y + 33);
+        ctx.fillText(s2, w / 2 - 32, y + 34);
       } else {
         ctx.fillStyle = '#14151e';
         ctx.fill();
