@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8" />
@@ -11,23 +11,41 @@
     @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;900&display=swap');
 
     :root {
-      --bg-dark: #050914;
-      --bg-card: rgba(12, 20, 40, 0.88);
-      --bg-card-2: rgba(18, 30, 58, 0.92);
-      --border: rgba(56, 189, 248, 0.24);
+      --bg-dark: #060608;
+      --bg-card: rgba(16, 17, 24, 0.92);
+      --bg-card-2: rgba(24, 25, 34, 0.95);
+      --border: rgba(255, 208, 0, 0.25);
+      --border-soft: rgba(255, 255, 255, 0.10);
       --primary: #ffd000;
+      --primary-2: #f59e0b;
       --primary-hover: #e5bb00;
-      --accent: #00e5ff;
+      --accent: #ffe066;
       --emerald: #00e676;
+      --wa-green: #25d366;
       --danger: #ff4757;
       --text: #f8fafc;
-      --text-muted: #cbd5e1;
+      --text-muted: #b8c0cc;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Vazirmatn', Tahoma, Arial, sans-serif; }
 
     body {
-      background: radial-gradient(circle at top right, #0e263d, #050914 60%);
+      background-color: #060608;
+      /* Sports Stadium + Carbon Luxury Gold CSS Background */
+      background-image:
+        radial-gradient(ellipse 80% 45% at 50% 0%, rgba(255, 208, 0, 0.16), transparent 70%),
+        radial-gradient(circle at 15% 80%, rgba(0, 230, 118, 0.06), transparent 45%),
+        repeating-linear-gradient(
+          -45deg,
+          rgba(255, 208, 0, 0.025) 0px,
+          rgba(255, 208, 0, 0.025) 2px,
+          transparent 2px,
+          transparent 18px
+        ),
+        linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 100% 100%, 44px 44px, 44px 44px;
+      background-attachment: fixed;
       color: var(--text);
       min-height: 100vh;
       line-height: 1.6;
@@ -36,35 +54,32 @@
       overflow-x: hidden;
     }
 
-    #bgLayer {
+    /* Decorative Sports Pitch Ring Watermark */
+    body::before {
+      content: "";
       position: fixed;
-      inset: 0;
-      z-index: -2;
-      background-size: cover;
-      background-position: center top;
-      background-repeat: no-repeat;
-      opacity: 0;
-      transition: opacity 0.45s ease;
-    }
-
-    #bgOverlay {
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      background: linear-gradient(180deg, rgba(5, 9, 20, 0.56) 0%, rgba(5, 9, 20, 0.89) 100%);
+      top: 52%;
+      left: 50%;
+      width: 460px;
+      height: 460px;
+      transform: translate(-50%, -50%);
+      border: 2px solid rgba(255, 208, 0, 0.055);
+      border-radius: 50%;
+      box-shadow: inset 0 0 80px rgba(255, 208, 0, 0.03);
       pointer-events: none;
+      z-index: -1;
     }
 
     /* Header */
     header {
-      background: rgba(7, 12, 26, 0.92);
-      backdrop-filter: blur(14px);
+      background: rgba(8, 8, 12, 0.94);
+      backdrop-filter: blur(16px);
       border-bottom: 2px solid var(--primary);
       padding: 12px 16px;
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.55);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.75);
     }
 
     .header-inner {
@@ -80,15 +95,16 @@
     .brand { display: flex; align-items: center; gap: 12px; }
     .brand-logo {
       width: 48px; height: 48px;
-      background: linear-gradient(135deg, var(--primary), #ff8c00);
+      background: linear-gradient(135deg, #ffe259, #ffa751);
       color: #000; border-radius: 14px;
       display: flex; align-items: center; justify-content: center;
-      font-weight: 900; font-size: 22px;
-      box-shadow: 0 0 20px rgba(255, 208, 0, 0.42);
+      font-weight: 900; font-size: 23px;
+      box-shadow: 0 0 22px rgba(255, 208, 0, 0.45);
+      border: 1px solid #fff3b0;
       flex-shrink: 0;
     }
-    .brand h1 { font-size: 19px; font-weight: 900; color: var(--primary); line-height: 1.2; }
-    .brand p { font-size: 11px; color: var(--accent); }
+    .brand h1 { font-size: 19px; font-weight: 900; color: var(--primary); line-height: 1.2; text-shadow: 0 2px 10px rgba(255, 208, 0, 0.25); }
+    .brand p { font-size: 11px; color: var(--text-muted); }
 
     .header-actions { display: flex; gap: 7px; flex-wrap: wrap; align-items: center; }
 
@@ -105,58 +121,103 @@
 
     /* Announcement Banner */
     .announcement-bar {
-      background: linear-gradient(90deg, rgba(255, 208, 0, 0.18), rgba(0, 229, 255, 0.15));
+      background: linear-gradient(90deg, rgba(255, 208, 0, 0.16), rgba(245, 158, 11, 0.12), rgba(255, 208, 0, 0.16));
       border-bottom: 1px solid rgba(255, 208, 0, 0.4);
       padding: 10px 16px;
       text-align: center;
       font-size: 13px;
       font-weight: 700;
-      color: #fff;
+      color: #fff7cc;
     }
 
     .container { max-width: 1220px; margin: 18px auto; padding: 0 14px; }
 
-    /* Sponsor Spotlight Hero */
+    /* Luxury Top Sponsor Frame Card */
     .sponsor-hero {
-      background: linear-gradient(135deg, rgba(0, 230, 118, 0.16), rgba(12, 20, 40, 0.92) 55%, rgba(255, 208, 0, 0.14));
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(0, 230, 118, 0.4);
-      border-radius: 20px;
-      padding: 15px 18px;
+      background: linear-gradient(145deg, rgba(26, 23, 12, 0.95), rgba(12, 13, 18, 0.97) 55%, rgba(20, 28, 20, 0.95));
+      backdrop-filter: blur(14px);
+      border: 2px solid var(--primary);
+      border-radius: 22px;
+      padding: 18px 20px;
       margin-bottom: 18px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 14px;
+      gap: 16px;
       flex-wrap: wrap;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.65), 0 0 28px rgba(255, 208, 0, 0.14);
+      position: relative;
+      overflow: hidden;
     }
 
-    .sponsor-profile { display: flex; align-items: center; gap: 14px; }
-    .sponsor-avatar-wrap { position: relative; width: 66px; height: 66px; flex-shrink: 0; }
+    .sponsor-hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, transparent, var(--primary), #fff3b0, var(--primary), transparent);
+    }
+
+    .sponsor-profile { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+
+    .sponsor-frame {
+      position: relative;
+      width: 96px;
+      height: 96px;
+      padding: 3px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #ffd000, #f59e0b, #fff099, #d97706);
+      box-shadow: 0 0 24px rgba(255, 208, 0, 0.38);
+      flex-shrink: 0;
+    }
+
     .sponsor-avatar {
-      width: 66px; height: 66px;
-      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+      border-radius: 17px;
       object-fit: cover;
       object-position: center top;
-      border: 2.5px solid var(--emerald);
-      box-shadow: 0 0 18px rgba(0, 230, 118, 0.4);
-      background: linear-gradient(135deg, #0f5132, #198754);
+      background: linear-gradient(135deg, #11131a, #1d222e);
       display: flex; align-items: center; justify-content: center;
-      font-weight: 900; font-size: 24px; color: #fff;
+      font-weight: 900; font-size: 32px; color: var(--primary);
     }
+
     .verified-badge {
       position: absolute;
-      bottom: -2px; right: -2px;
-      width: 22px; height: 22px;
+      bottom: -5px; right: -5px;
+      width: 26px; height: 26px;
       background: #1d9bf0;
-      border: 2px solid #050914;
+      border: 2.5px solid #090a0f;
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      color: #fff; font-size: 12px; font-weight: 900;
+      color: #fff; font-size: 13px; font-weight: 900;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.6);
     }
-    .sponsor-info h3 { font-size: 16px; font-weight: 900; color: #fff; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-    .sponsor-info small { font-size: 12px; color: var(--emerald); font-weight: 700; display: block; }
+
+    .sponsor-info h3 {
+      font-size: 18px; font-weight: 900; color: #fff;
+      display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+    }
+    .sponsor-info small { font-size: 13px; color: var(--primary); font-weight: 700; display: block; margin-top: 2px; }
+    .sponsor-info .sub-note { font-size: 11px; color: var(--text-muted); display: block; margin-top: 2px; }
+
+    .sponsor-actions {
+      display: flex; flex-direction: column; gap: 8px; align-items: flex-end;
+    }
+
+    .btn-wa-group {
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 10px 18px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 900;
+      display: inline-flex; align-items: center; gap: 8px;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(37, 211, 102, 0.28);
+      transition: 0.2s;
+    }
+    .btn-wa-group:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37, 211, 102, 0.42); }
 
     /* Cards & Controls */
     .card {
@@ -166,7 +227,7 @@
       border-radius: 18px;
       padding: 18px;
       margin-bottom: 18px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
     }
 
     .card-title {
@@ -174,7 +235,7 @@
       margin-bottom: 14px;
       display: flex; align-items: center; justify-content: space-between;
       gap: 10px; flex-wrap: wrap;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid rgba(255, 208, 0, 0.18);
       padding-bottom: 10px;
     }
 
@@ -185,8 +246,8 @@
 
     input, select, textarea {
       width: 100%;
-      background: rgba(5, 9, 20, 0.85);
-      border: 1px solid rgba(148, 163, 184, 0.25);
+      background: rgba(8, 9, 13, 0.92);
+      border: 1px solid rgba(255, 208, 0, 0.22);
       color: var(--text);
       padding: 10px 12px;
       border-radius: 10px;
@@ -196,13 +257,13 @@
     }
     input:focus, select:focus, textarea:focus {
       border-color: var(--primary);
-      box-shadow: 0 0 0 2px rgba(255, 208, 0, 0.18);
+      box-shadow: 0 0 0 2px rgba(255, 208, 0, 0.2);
     }
 
     .checkbox-row {
       display: flex; align-items: center; gap: 8px; cursor: pointer;
-      padding: 8px 10px; background: rgba(5, 9, 20, 0.65);
-      border: 1px solid rgba(148, 163, 184, 0.22); border-radius: 10px; font-size: 13px;
+      padding: 8px 10px; background: rgba(8, 9, 13, 0.75);
+      border: 1px solid var(--border-soft); border-radius: 10px; font-size: 13px;
     }
     .checkbox-row input { width: auto; }
 
@@ -214,40 +275,45 @@
       white-space: nowrap; text-decoration: none;
     }
     .btn:active { transform: scale(0.97); }
-    .btn-primary { background: var(--primary); color: #000; }
-    .btn-primary:hover { background: var(--primary-hover); }
-    .btn-accent { background: var(--accent); color: #000; }
-    .btn-success { background: var(--emerald); color: #000; }
+    .btn-primary {
+      background: linear-gradient(135deg, #ffd000, #f59e0b);
+      color: #000;
+      box-shadow: 0 4px 12px rgba(255, 208, 0, 0.22);
+    }
+    .btn-primary:hover { filter: brightness(1.06); }
+    .btn-accent { background: rgba(255, 208, 0, 0.16); color: var(--primary); border: 1px solid var(--primary); }
+    .btn-accent:hover { background: var(--primary); color: #000; }
+    .btn-success { background: linear-gradient(135deg, #00e676, #00c853); color: #000; }
     .btn-wa {
-      background: rgba(37, 211, 102, 0.18); color: #25d366;
+      background: rgba(37, 211, 102, 0.16); color: #25d366;
       border: 1px solid rgba(37, 211, 102, 0.45);
       padding: 3px 8px; border-radius: 8px; font-size: 11px; font-weight: 700;
       display: inline-flex; align-items: center; gap: 4px; text-decoration: none;
     }
     .btn-wa:hover { background: #25d366; color: #000; }
-    .btn-danger { background: rgba(255, 71, 87, 0.2); color: #ff6b78; border: 1px solid rgba(255, 71, 87, 0.45); }
+    .btn-danger { background: rgba(255, 71, 87, 0.18); color: #ff6b78; border: 1px solid rgba(255, 71, 87, 0.45); }
     .btn-danger:hover { background: var(--danger); color: #fff; }
-    .btn-outline { background: rgba(5, 9, 20, 0.65); color: var(--text); border: 1px solid rgba(148, 163, 184, 0.3); }
+    .btn-outline { background: rgba(10, 11, 16, 0.8); color: var(--text); border: 1px solid rgba(255, 255, 255, 0.18); }
     .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
     .btn-sm { padding: 6px 10px; font-size: 11px; border-radius: 8px; }
     .btn:disabled { opacity: 0.45; cursor: not-allowed; }
 
     .badge { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; }
-    .badge-yellow { background: rgba(255, 208, 0, 0.18); color: var(--primary); border: 1px solid rgba(255, 208, 0, 0.35); }
-    .badge-cyan { background: rgba(0, 229, 255, 0.18); color: var(--accent); border: 1px solid rgba(0, 229, 255, 0.35); }
-    .badge-green { background: rgba(0, 230, 118, 0.18); color: var(--emerald); border: 1px solid rgba(0, 230, 118, 0.35); }
-    .badge-red { background: rgba(255, 71, 87, 0.18); color: #ff6b78; border: 1px solid rgba(255, 71, 87, 0.35); }
+    .badge-yellow { background: rgba(255, 208, 0, 0.16); color: var(--primary); border: 1px solid rgba(255, 208, 0, 0.4); }
+    .badge-cyan { background: rgba(255, 255, 255, 0.08); color: #fff; border: 1px solid rgba(255, 255, 255, 0.22); }
+    .badge-green { background: rgba(0, 230, 118, 0.16); color: var(--emerald); border: 1px solid rgba(0, 230, 118, 0.35); }
+    .badge-red { background: rgba(255, 71, 87, 0.16); color: #ff6b78; border: 1px solid rgba(255, 71, 87, 0.35); }
 
     /* Leagues Selector */
     .leagues-bar { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 6px; margin-bottom: 16px; }
     .league-pill {
       background: var(--bg-card); backdrop-filter: blur(8px);
-      border: 1px solid var(--border); padding: 11px 15px; border-radius: 14px;
+      border: 1px solid var(--border-soft); padding: 11px 15px; border-radius: 14px;
       cursor: pointer; min-width: 205px; flex-shrink: 0; transition: 0.2s;
     }
     .league-pill.active {
       border-color: var(--primary);
-      background: linear-gradient(135deg, rgba(255, 208, 0, 0.2), var(--bg-card-2));
+      background: linear-gradient(135deg, rgba(255, 208, 0, 0.18), var(--bg-card-2));
       box-shadow: 0 0 18px rgba(255, 208, 0, 0.18);
     }
     .league-pill h4 { font-size: 14px; margin-bottom: 3px; color: #fff; }
@@ -261,8 +327,8 @@
       margin-top: 12px;
     }
     .stat-box {
-      background: rgba(5, 9, 20, 0.62);
-      border: 1px solid rgba(56, 189, 248, 0.18);
+      background: rgba(8, 9, 13, 0.78);
+      border: 1px solid rgba(255, 208, 0, 0.2);
       border-radius: 12px;
       padding: 10px 12px;
       text-align: center;
@@ -278,70 +344,70 @@
       margin-top: 12px;
     }
     .info-pill-box {
-      background: rgba(5, 9, 20, 0.68);
-      border: 1px solid var(--border);
+      background: rgba(8, 9, 13, 0.78);
+      border: 1px solid var(--border-soft);
       border-radius: 12px;
       padding: 10px 12px;
       font-size: 12px;
     }
-    .info-pill-box small { display: block; color: var(--accent); font-size: 11px; margin-bottom: 3px; }
+    .info-pill-box small { display: block; color: var(--primary); font-size: 11px; margin-bottom: 3px; font-weight: 700; }
 
     .progress-wrap {
-      background: rgba(5, 9, 20, 0.88);
+      background: rgba(8, 9, 13, 0.9);
       border-radius: 999px; height: 13px; overflow: hidden;
-      border: 1px solid var(--border); margin: 10px 0;
+      border: 1px solid rgba(255, 208, 0, 0.25); margin: 10px 0;
     }
-    .progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--emerald), var(--primary)); transition: width 0.35s ease; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, #f59e0b, #ffd000, #00e676); transition: width 0.35s ease; }
 
     .table-wrap { overflow-x: auto; }
     table { width: 100%; border-collapse: collapse; font-size: 13px; }
-    th, td { padding: 10px 9px; text-align: start; border-bottom: 1px solid var(--border); }
-    th { background: var(--bg-card-2); color: var(--primary); font-weight: 700; white-space: nowrap; }
+    th, td { padding: 10px 9px; text-align: start; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+    th { background: rgba(255, 208, 0, 0.1); color: var(--primary); font-weight: 700; white-space: nowrap; }
     tr.qualify-row td:first-child { border-inline-start: 4px solid var(--emerald); }
 
     .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
     .tab-btn {
       padding: 8px 14px; border-radius: 10px;
-      background: rgba(5, 9, 20, 0.78); border: 1px solid var(--border);
+      background: rgba(10, 11, 16, 0.85); border: 1px solid rgba(255, 255, 255, 0.15);
       color: var(--text-muted); cursor: pointer; font-size: 12px; font-weight: 700; transition: 0.2s;
     }
-    .tab-btn.active { background: var(--primary); color: #000; border-color: var(--primary); }
+    .tab-btn.active { background: linear-gradient(135deg, #ffd000, #f59e0b); color: #000; border-color: var(--primary); }
 
     /* Esports Match Card */
     .matches-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(305px, 1fr)); gap: 14px; }
     .match-card {
-      background: linear-gradient(165deg, rgba(20, 34, 66, 0.94), rgba(10, 17, 36, 0.94));
-      border: 1px solid var(--border);
+      background: linear-gradient(165deg, rgba(26, 27, 36, 0.96), rgba(12, 13, 18, 0.96));
+      border: 1px solid rgba(255, 208, 0, 0.24);
       border-radius: 16px;
       padding: 14px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.45);
     }
     .match-card.finished { border-color: rgba(0, 230, 118, 0.6); }
     .match-header {
       display: flex; justify-content: space-between; align-items: center;
       font-size: 11px; color: var(--text-muted);
-      margin-bottom: 10px; padding-bottom: 7px; border-bottom: 1px solid rgba(148,163,184,0.14);
+      margin-bottom: 10px; padding-bottom: 7px; border-bottom: 1px solid rgba(255, 208, 0, 0.14);
     }
     .match-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
     .vs-divider {
       display: flex; align-items: center; gap: 8px; margin: 7px 0;
-      font-size: 10px; font-weight: 900; color: var(--primary); opacity: 0.85;
+      font-size: 10px; font-weight: 900; color: var(--primary);
     }
     .vs-divider::before, .vs-divider::after {
-      content: ""; flex: 1; height: 1px; background: rgba(255, 208, 0, 0.22);
+      content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(255, 208, 0, 0.35), transparent);
     }
 
     .player-box { flex: 1; min-width: 0; }
     .player-name { font-weight: 700; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .player-name.winner { color: var(--emerald); }
     .player-contact { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: 3px; }
-    .player-phone { font-size: 12px; color: var(--accent); direction: ltr; font-weight: 600; }
+    .player-phone { font-size: 12px; color: var(--primary); direction: ltr; font-weight: 600; }
 
     .score-input { width: 54px; text-align: center; font-weight: 900; font-size: 17px; padding: 6px; }
     .score-display {
       width: 48px; text-align: center; font-weight: 900; font-size: 17px;
-      padding: 6px; background: rgba(5, 9, 20, 0.8); border-radius: 10px;
-      border: 1px solid var(--border); color: var(--primary);
+      padding: 6px; background: rgba(6, 6, 9, 0.9); border-radius: 10px;
+      border: 1px solid rgba(255, 208, 0, 0.3); color: var(--primary);
     }
 
     .penalty-box {
@@ -352,51 +418,51 @@
 
     /* Podium Banner */
     .podium-banner {
-      background: linear-gradient(135deg, rgba(255, 208, 0, 0.22), rgba(0, 230, 118, 0.16), rgba(0, 229, 255, 0.16));
+      background: linear-gradient(135deg, rgba(255, 208, 0, 0.2), rgba(20, 20, 28, 0.95), rgba(0, 230, 118, 0.14));
       backdrop-filter: blur(10px); border: 2px solid var(--primary);
       border-radius: 18px; padding: 20px; text-align: center; margin-bottom: 18px;
+      box-shadow: 0 0 30px rgba(255, 208, 0, 0.16);
     }
     .podium-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
       gap: 10px; margin-top: 14px;
     }
     .podium-place {
-      background: rgba(5, 9, 20, 0.72); border: 1px solid var(--border);
+      background: rgba(8, 9, 13, 0.85); border: 1px solid rgba(255, 208, 0, 0.25);
       border-radius: 12px; padding: 12px;
     }
 
     .hidden { display: none !important; }
 
     .modal-backdrop {
-      position: fixed; inset: 0; background: rgba(0, 0, 0, 0.82);
+      position: fixed; inset: 0; background: rgba(0, 0, 0, 0.85);
       display: flex; align-items: center; justify-content: center;
       z-index: 200; padding: 16px;
     }
     .modal {
-      background: #0d152a; border: 1px solid var(--primary);
+      background: #111218; border: 1.5px solid var(--primary);
       border-radius: 18px; max-width: 540px; width: 100%;
       padding: 20px; max-height: 90vh; overflow-y: auto;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
     }
 
     .alert-info {
-      background: rgba(0, 229, 255, 0.12); border: 1px solid rgba(0, 229, 255, 0.35);
-      color: var(--accent); padding: 10px 14px; border-radius: 10px; font-size: 13px; margin-bottom: 14px;
+      background: rgba(255, 208, 0, 0.1); border: 1px solid rgba(255, 208, 0, 0.35);
+      color: #ffe885; padding: 10px 14px; border-radius: 10px; font-size: 13px; margin-bottom: 14px;
     }
 
     footer.sponsor-footer { text-align: center; padding: 14px; font-size: 12px; color: var(--text-muted); }
 
     @media print {
-      header, .no-print, #bgLayer, #bgOverlay { display: none !important; }
+      header, .no-print { display: none !important; }
       body { background: #fff; color: #000; }
+      body::before { display: none; }
       .card, .match-card, .sponsor-hero { border: 1px solid #ccc; background: #fff; color: #000; box-shadow: none; }
       th { background: #eee; color: #000; }
     }
   </style>
 </head>
 <body>
-
-<div id="bgLayer"></div>
-<div id="bgOverlay"></div>
 
 <header>
   <div class="header-inner">
@@ -469,6 +535,48 @@
   </div>
 </div>
 
+<!-- WhatsApp Group Link Modal -->
+<div id="waGroupModal" class="modal-backdrop hidden">
+  <div class="modal" style="max-width: 460px;">
+    <div class="card-title">
+      <span data-t="waGroupModalTitle">💬 لینک گروپ واتساپ وحدت گروپ</span>
+      <button class="btn btn-sm btn-outline" onclick="closeModal('waGroupModal')">✕</button>
+    </div>
+    <form onsubmit="saveWaGroupLink(event)">
+      <div style="margin-bottom: 14px;">
+        <label data-t="waGroupLabel">لینک دعوت گروپ واتساپ (برای حذف، خالی بگذارید)</label>
+        <input type="url" id="waGroupInput" placeholder="https://chat.whatsapp.com/..." dir="ltr" />
+      </div>
+      <button type="submit" class="btn btn-primary" style="width: 100%; padding: 11px;" data-t="saveBtn">ذخیره لینک گروپ</button>
+    </form>
+  </div>
+</div>
+
+<!-- Edit / Replace Player Modal -->
+<div id="editPlayerModal" class="modal-backdrop hidden">
+  <div class="modal" style="max-width: 430px;">
+    <div class="card-title">
+      <span data-t="editPlayerModalTitle">🔄 تعویض / ویرایش بازیکن</span>
+      <button class="btn btn-sm btn-outline" onclick="closeModal('editPlayerModal')">✕</button>
+    </div>
+    <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;" data-t="editPlayerDesc">
+      حتی پس از شروع لیگ می‌توانید نام و شماره بازیکن را به شخص جدید تغییر دهید تا جایگزین بازی‌های او شود:
+    </p>
+    <form onsubmit="saveEditedPlayer(event)">
+      <input type="hidden" id="editPlayerPid" />
+      <div style="margin-bottom: 12px;">
+        <label data-t="fullName">نام کامل اشتراک‌کننده</label>
+        <input type="text" id="editPlayerNameInput" required />
+      </div>
+      <div style="margin-bottom: 16px;">
+        <label data-t="phoneNum">شماره واتساپ / تماس</label>
+        <input type="tel" id="editPlayerPhoneInput" required dir="ltr" />
+      </div>
+      <button type="submit" class="btn btn-primary" style="width: 100%; padding: 11px;" data-t="saveBtn">ذخیره تغییرات</button>
+    </form>
+  </div>
+</div>
+
 <!-- Announcement Modal -->
 <div id="announcementModal" class="modal-backdrop hidden">
   <div class="modal" style="max-width: 480px;">
@@ -526,7 +634,7 @@
         </label>
       </div>
 
-      <div id="pointsOptionsBox" class="hidden" style="margin-bottom: 12px; padding: 12px; background: rgba(5,9,20,0.7); border-radius: 10px; border: 1px solid var(--border);">
+      <div id="pointsOptionsBox" class="hidden" style="margin-bottom: 12px; padding: 12px; background: rgba(6,6,9,0.8); border-radius: 10px; border: 1px solid var(--border-soft);">
         <div class="grid-2">
           <div>
             <label data-t="pointsFormatLabel">فرمت لیگ امتیازی</label>
@@ -669,15 +777,17 @@
   const I18N = {
     fa: {
       brandTitle: 'وحدت گروپ',
-      brandSubtitle: 'پلتفرم آنلاین لیگ‌های ای‌فوتبال (eFootball)',
+      brandSubtitle: 'پلتفرم آنلاین لیگ‌های وحدت گروپ (eFootball)',
       sponsorTitle: 'شفیق الله محمدی',
       sponsorRole: 'رییس گروه وحدت • اسپانسر رسمی لیگ‌ها',
-      sponsorNote: 'حامی ورزش و رقابت‌های آنلاین ای‌فوتبال',
+      sponsorNote: 'حامی ورزش و تورنمنت‌های رسمی ای‌فوتبال',
+      joinWaGroupBtn: '💬 عضویت در گروپ واتساپ',
+      waGroupSetupBtn: '💬 گروپ واتساپ',
       online: 'آنلاین',
       connecting: '⏳ اتصال...',
       adminActive: '👑 مدیر فعال',
       newLeague: '+ لیگ جدید',
-      sponsorPhotoBtn: '🖼️ عکس اسپانسر / پس‌زمینه',
+      sponsorPhotoBtn: '🖼️ عکس رییس گروه',
       removePhotoBtn: 'حذف عکس',
       announcementBtn: '📢 اعلان',
       changePassBtn: '🔑 رمز',
@@ -731,7 +841,7 @@
       searchName: 'جستجو نام یا شماره...',
       phoneHeader: 'شماره واتساپ / تماس',
       actions: 'عملیات',
-      edit: 'ویرایش',
+      editReplace: '🔄 تعویض / ویرایش',
       del: 'حذف',
       noPlayers: 'هنوز بازیکنی ثبت نشده است.',
       champion: 'قهرمان لیگ',
@@ -764,11 +874,13 @@
       sponsorTitle: 'Shafiqullah Mohammadi',
       sponsorRole: 'President of Wahdat Group • Official League Sponsor',
       sponsorNote: 'Supporting eFootball Esports & Tournaments',
+      joinWaGroupBtn: '💬 Join WhatsApp Group',
+      waGroupSetupBtn: '💬 WA Group Link',
       online: 'Online',
       connecting: '⏳ Connecting...',
       adminActive: '👑 Admin Active',
       newLeague: '+ New League',
-      sponsorPhotoBtn: '🖼️ Sponsor / BG Photo',
+      sponsorPhotoBtn: '🖼️ Sponsor Photo',
       removePhotoBtn: 'Remove Photo',
       announcementBtn: '📢 News',
       changePassBtn: '🔑 Password',
@@ -822,7 +934,7 @@
       searchName: 'Search name or phone...',
       phoneHeader: 'WhatsApp / Phone',
       actions: 'Actions',
-      edit: 'Edit',
+      editReplace: '🔄 Replace / Edit',
       del: 'Delete',
       noPlayers: 'No players registered yet.',
       champion: 'Champion',
@@ -858,6 +970,7 @@
     privatePhones: {},
     bgImage: '',
     announcement: '',
+    whatsappGroupLink: '',
     activeLeagueId: localStorage.getItem('wahdat_active_league') || null,
     isAdmin: false,
     userEmail: null,
@@ -1011,9 +1124,9 @@
       state.leagues = val.leagues || {};
       state.bgImage = val.bgImage || '';
       state.announcement = val.announcement || '';
+      state.whatsappGroupLink = val.whatsappGroupLink || '';
       state.connected = true;
       state.dbError = null;
-      applyBackground();
       render();
     }, (err) => {
       state.dbError = err.message;
@@ -1088,18 +1201,7 @@
     }
   }
 
-  // --- Background & Announcement ---
-  function applyBackground() {
-    const bgLayer = document.getElementById('bgLayer');
-    if (state.bgImage) {
-      bgLayer.style.backgroundImage = `url("${state.bgImage}")`;
-      bgLayer.style.opacity = '1';
-    } else {
-      bgLayer.style.backgroundImage = 'none';
-      bgLayer.style.opacity = '0';
-    }
-  }
-
+  // --- Sponsor Photo, WhatsApp Group & Announcement ---
   function handleBgUpload(e) {
     if (!state.isAdmin) return;
     const file = e.target.files[0];
@@ -1108,7 +1210,7 @@
     reader.onload = function(ev) {
       const img = new Image();
       img.onload = async function() {
-        const maxDim = 960;
+        const maxDim = 600;
         let w = img.width, h = img.height;
         if (w > maxDim || h > maxDim) {
           if (w > h) { h = Math.round(h * maxDim / w); w = maxDim; }
@@ -1117,7 +1219,7 @@
         const canvas = document.createElement('canvas');
         canvas.width = w; canvas.height = h;
         canvas.getContext('2d').drawImage(img, 0, 0, w, h);
-        await db.ref('publicData/bgImage').set(canvas.toDataURL('image/jpeg', 0.72));
+        await db.ref('publicData/bgImage').set(canvas.toDataURL('image/jpeg', 0.82));
       };
       img.src = ev.target.result;
     };
@@ -1126,8 +1228,21 @@
   }
 
   async function clearBgImage() {
-    if (!state.isAdmin || !confirm(uiState.lang === 'fa' ? 'عکس پس‌زمینه حذف شود؟' : 'Remove sponsor/background photo?')) return;
+    if (!state.isAdmin || !confirm(uiState.lang === 'fa' ? 'عکس رییس گروه حذف شود؟' : 'Remove sponsor photo?')) return;
     await db.ref('publicData/bgImage').set('');
+  }
+
+  function openWaGroupModal() {
+    document.getElementById('waGroupInput').value = state.whatsappGroupLink || '';
+    openModal('waGroupModal');
+  }
+
+  async function saveWaGroupLink(e) {
+    e.preventDefault();
+    if (!state.isAdmin) return;
+    const link = document.getElementById('waGroupInput').value.trim();
+    await db.ref('publicData/whatsappGroupLink').set(link);
+    closeModal('waGroupModal');
   }
 
   function openAnnouncementModal() {
@@ -1230,7 +1345,7 @@
   }
 
   async function deleteLeague(id) {
-    if (!state.isAdmin || !confirm(uiState.lang === 'fa' ? 'این لیگ حذف شود؟' : 'Delete this league?')) return;
+    if (!state.isAdmin || !confirm(uiState.lang === 'fa' ? 'این لیگ به طور کامل حذف شود؟' : 'Delete this league completely?')) return;
     const updates = {};
     updates[`publicData/leagues/${id}`] = null;
     updates[`privatePhones/${id}`] = null;
@@ -1247,7 +1362,7 @@
     });
   }
 
-  // --- Player Registration & Approval ---
+  // --- Player Registration, Approval & Mid-League Replacement ---
   async function registerPlayer(e) {
     e.preventDefault();
     const league = getActiveLeague();
@@ -1267,7 +1382,8 @@
       return;
     }
 
-    if (league.players && league.players[cleanPhone]) {
+    const allPlayers = getAllPlayersList(league);
+    if ((league.players && league.players[cleanPhone]) || allPlayers.some(p => p.phone === cleanPhone)) {
       alert(uiState.lang === 'fa' ? 'این شماره تماس قبلاً ثبت‌نام شده است!' : 'This phone number is already registered!');
       return;
     }
@@ -1302,6 +1418,47 @@
       return;
     }
     await db.ref(`publicData/leagues/${league.id}/players/${pid}/approved`).set(true);
+  }
+
+  function openEditPlayerModal(pid) {
+    const league = getActiveLeague();
+    if (!state.isAdmin || !league) return;
+    const p = getPlayer(league, pid);
+    if (!p) return;
+    document.getElementById('editPlayerPid').value = pid;
+    document.getElementById('editPlayerNameInput').value = p.name;
+    document.getElementById('editPlayerPhoneInput').value = p.phone;
+    openModal('editPlayerModal');
+  }
+
+  async function saveEditedPlayer(e) {
+    e.preventDefault();
+    const league = getActiveLeague();
+    if (!state.isAdmin || !league) return;
+    const pid = document.getElementById('editPlayerPid').value;
+    const cleanName = document.getElementById('editPlayerNameInput').value.trim();
+    const cleanPhone = sanitizePhoneKey(document.getElementById('editPlayerPhoneInput').value.trim());
+
+    if (!cleanName || cleanPhone.length < 7) {
+      alert(uiState.lang === 'fa' ? 'نام و شماره تماس معتبر وارد کنید.' : 'Enter valid name & phone.');
+      return;
+    }
+
+    const others = getAllPlayersList(league).filter(p => p.id !== pid);
+    if (others.some(p => p.phone === cleanPhone)) {
+      alert(uiState.lang === 'fa' ? 'این شماره تماس متعلق به بازیکن دیگری است!' : 'This phone belongs to another player!');
+      return;
+    }
+
+    const updates = {};
+    updates[`publicData/leagues/${league.id}/players/${pid}/name`] = cleanName;
+    updates[`publicData/leagues/${league.id}/players/${pid}/phone`] = cleanPhone;
+    updates[`publicData/leagues/${league.id}/players/${pid}/phoneMasked`] = maskPhone(cleanPhone);
+    updates[`privatePhones/${league.id}/${pid}/name`] = cleanName;
+    updates[`privatePhones/${league.id}/${pid}/phone`] = cleanPhone;
+
+    await db.ref().update(updates);
+    closeModal('editPlayerModal');
   }
 
   async function processBulkAdd() {
@@ -1373,21 +1530,6 @@
     const updates = {};
     updates[`publicData/leagues/${league.id}/players/${pid}`] = null;
     updates[`privatePhones/${league.id}/${pid}`] = null;
-    await db.ref().update(updates);
-  }
-
-  async function editPlayer(pid) {
-    const league = getActiveLeague();
-    if (!state.isAdmin || !league) return;
-    const p = getPlayer(league, pid);
-    if (!p) return;
-    const newName = prompt(uiState.lang === 'fa' ? 'نام جدید:' : 'New Name:', p.name);
-    if (newName === null) return;
-    const cleanName = newName.trim();
-    if (!cleanName) return;
-    const updates = {};
-    updates[`publicData/leagues/${league.id}/players/${pid}/name`] = cleanName;
-    updates[`privatePhones/${league.id}/${pid}/name`] = cleanName;
     await db.ref().update(updates);
   }
 
@@ -1548,7 +1690,7 @@
     const sel = document.getElementById('playoffSizeSelect');
     const options = [4, 8, 16, 32, 64].filter(k => k <= league.capacity && k >= groups.length);
     const ideal = groups.length * 2;
-    sel.innerHTML = options.map(k => `<option value="${k}" ${k === ideal ? 'selected' : ''}>${k} Teams (${k === 8 ? 'QF' : k === 16 ? 'R16' : k === 32 ? 'R32' : 'R64'})</option>`).join('');
+    sel.innerHTML = options.map(k => `<option value="${k}" ${k === ideal ? 'selected' : ''}>${k} Teams (${k === 4 ? 'SF' : k === 8 ? 'QF' : k === 16 ? 'R16' : k === 32 ? 'R32' : 'R64'})</option>`).join('');
     openModal('playoffModal');
   }
 
@@ -1784,71 +1926,254 @@
     return { total, done };
   }
 
-  // --- PNG Image Generator ---
-  function exportStandingsImage(groupIdx) {
+  // --- Luxury Black & Gold Sports Poster PNG Generators ---
+  function drawRoundRect(ctx, x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.lineTo(x + w - r, y);
+    ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+    ctx.lineTo(x + w, y + h - r);
+    ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+    ctx.lineTo(x + r, y + h);
+    ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+    ctx.lineTo(x, y + r);
+    ctx.quadraticCurveTo(x, y, x + r, y);
+    ctx.closePath();
+  }
+
+  function loadSponsorImg(src) {
+    return new Promise((resolve) => {
+      if (!src) { resolve(null); return; }
+      const img = new Image();
+      img.onload = () => resolve(img);
+      img.onerror = () => resolve(null);
+      img.src = src;
+    });
+  }
+
+  function paintPosterBackdrop(ctx, w, h) {
+    const bgGrad = ctx.createLinearGradient(0, 0, 0, h);
+    bgGrad.addColorStop(0, '#12131a');
+    bgGrad.addColorStop(0.5, '#08090d');
+    bgGrad.addColorStop(1, '#050507');
+    ctx.fillStyle = bgGrad;
+    ctx.fillRect(0, 0, w, h);
+
+    // Top Gold Spotlight Glow
+    const spot = ctx.createRadialGradient(w / 2, 0, 20, w / 2, 0, w * 0.75);
+    spot.addColorStop(0, 'rgba(255, 208, 0, 0.22)');
+    spot.addColorStop(1, 'rgba(255, 208, 0, 0)');
+    ctx.fillStyle = spot;
+    ctx.fillRect(0, 0, w, 340);
+
+    // Diagonal Sports Carbon Stripes
+    ctx.save();
+    ctx.strokeStyle = 'rgba(255, 208, 0, 0.035)';
+    ctx.lineWidth = 10;
+    for (let x = -h; x < w + h; x += 36) {
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x + h * 0.45, h);
+      ctx.stroke();
+    }
+    ctx.restore();
+
+    // Outer Luxury Gold Frame
+    ctx.strokeStyle = 'rgba(255, 208, 0, 0.55)';
+    ctx.lineWidth = 4;
+    ctx.strokeRect(10, 10, w - 20, h - 20);
+
+    const goldBar = ctx.createLinearGradient(0, 0, w, 0);
+    goldBar.addColorStop(0, '#b45309');
+    goldBar.addColorStop(0.5, '#ffd000');
+    goldBar.addColorStop(1, '#b45309');
+    ctx.fillStyle = goldBar;
+    ctx.fillRect(10, 10, w - 20, 8);
+    ctx.fillRect(10, h - 18, w - 20, 8);
+  }
+
+  function paintPosterHeader(ctx, w, titleMain, titleSub, sponsorImg) {
+    // Header Banner Card
+    drawRoundRect(ctx, 28, 30, w - 56, 138, 18);
+    ctx.fillStyle = 'rgba(20, 21, 29, 0.92)';
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(255, 208, 0, 0.45)';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    // Sponsor Framed Portrait on Left
+    const cx = 100, cy = 99, rad = 42;
+    ctx.save();
+    drawRoundRect(ctx, cx - rad - 3, cy - rad - 3, (rad + 3) * 2, (rad + 3) * 2, 16);
+    const frameGrad = ctx.createLinearGradient(cx - rad, cy - rad, cx + rad, cy + rad);
+    frameGrad.addColorStop(0, '#ffd000');
+    frameGrad.addColorStop(1, '#f59e0b');
+    ctx.fillStyle = frameGrad;
+    ctx.fill();
+
+    drawRoundRect(ctx, cx - rad, cy - rad, rad * 2, rad * 2, 14);
+    ctx.clip();
+    if (sponsorImg) {
+      const ratio = Math.max((rad * 2) / sponsorImg.width, (rad * 2) / sponsorImg.height);
+      const dw = sponsorImg.width * ratio;
+      const dh = sponsorImg.height * ratio;
+      ctx.drawImage(sponsorImg, cx - dw / 2, cy - rad, dw, dh);
+    } else {
+      ctx.fillStyle = '#181922';
+      ctx.fillRect(cx - rad, cy - rad, rad * 2, rad * 2);
+      ctx.fillStyle = '#ffd000';
+      ctx.font = 'bold 34px Tahoma, Arial';
+      ctx.textAlign = 'center';
+      ctx.fillText('W', cx, cy + 12);
+    }
+    ctx.restore();
+
+    // Verified Blue Tick on Sponsor Portrait
+    ctx.beginPath();
+    ctx.arc(cx + rad - 4, cy + rad - 4, 12, 0, Math.PI * 2);
+    ctx.fillStyle = '#1d9bf0';
+    ctx.fill();
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = '#14151d';
+    ctx.stroke();
+    ctx.fillStyle = '#ffffff';
+    ctx.font = 'bold 13px Arial';
+    ctx.textAlign = 'center';
+    ctx.fillText('✓', cx + rad - 4, cy + rad + 1);
+
+    // Titles
+    ctx.textAlign = 'center';
+    ctx.fillStyle = '#ffd000';
+    ctx.font = 'bold 28px Tahoma, Arial';
+    ctx.fillText(titleMain, w / 2 + 35, 72);
+
+    // Pill Subtitle
+    drawRoundRect(ctx, w / 2 - 175, 86, 420, 34, 17);
+    ctx.fillStyle = 'rgba(255, 208, 0, 0.16)';
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(255, 208, 0, 0.5)';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+
+    ctx.fillStyle = '#ffffff';
+    ctx.font = 'bold 17px Tahoma, Arial';
+    ctx.fillText(titleSub, w / 2 + 35, 109);
+
+    ctx.fillStyle = '#00e676';
+    ctx.font = 'bold 14px Tahoma, Arial';
+    ctx.fillText('اسپانسر رسمی لیگ‌ها: شفیق الله محمدی (رییس گروه وحدت)', w / 2 + 35, 148);
+  }
+
+  async function exportStandingsImage(groupIdx) {
     const league = getActiveLeague();
     if (!league) return;
     const group = toArray(league.groups)[groupIdx];
     const standings = computeStandings(league, group);
+    const sponsorImg = await loadSponsorImg(state.bgImage);
 
-    const w = 900, rowH = 44, headerH = 140, footerH = 60;
+    const w = 940, rowH = 50, headerH = 192, footerH = 74;
     const h = headerH + (standings.length + 1) * rowH + footerH;
     const canvas = document.createElement('canvas');
     canvas.width = w; canvas.height = h;
     const ctx = canvas.getContext('2d');
 
-    const grad = ctx.createLinearGradient(0, 0, w, h);
-    grad.addColorStop(0, '#091128'); grad.addColorStop(1, '#060a16');
-    ctx.fillStyle = grad; ctx.fillRect(0, 0, w, h);
+    paintPosterBackdrop(ctx, w, h);
+    paintPosterHeader(ctx, w, `وحدت گروپ • ${league.name}`, `${group.name} — جدول رده‌بندی رسمی`, sponsorImg);
 
-    ctx.fillStyle = '#ffd000'; ctx.fillRect(0, 0, w, 6);
-    ctx.textAlign = 'center';
-    ctx.font = 'bold 28px Tahoma, Arial';
-    ctx.fillText(`وحدت گروپ • ${league.name}`, w / 2, 52);
-    ctx.fillStyle = '#00e5ff';
-    ctx.font = 'bold 20px Tahoma, Arial';
-    ctx.fillText(`${group.name} — جدول رده‌بندی`, w / 2, 92);
-    ctx.fillStyle = '#00e676';
-    ctx.font = '15px Tahoma, Arial';
-    ctx.fillText('اسپانسر: شفیق الله محمدی (رییس گروه وحدت)', w / 2, 122);
-
+    // Table Card Container
     const y0 = headerH;
-    ctx.fillStyle = '#162244'; ctx.fillRect(30, y0, w - 60, rowH);
-    ctx.fillStyle = '#ffd000'; ctx.font = 'bold 16px Tahoma, Arial';
-    ctx.textAlign = 'right'; ctx.fillText('#', 75, y0 + 28);
-    ctx.fillText('بازیکن', 340, y0 + 28);
+    drawRoundRect(ctx, 28, y0, w - 56, (standings.length + 1) * rowH + 6, 16);
+    ctx.fillStyle = 'rgba(15, 16, 22, 0.94)';
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(255, 208, 0, 0.35)';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+
+    // Header Row
+    drawRoundRect(ctx, 32, y0 + 4, w - 64, rowH - 4, 12);
+    const headGrad = ctx.createLinearGradient(32, y0, w - 32, y0);
+    headGrad.addColorStop(0, '#ffd000');
+    headGrad.addColorStop(1, '#f59e0b');
+    ctx.fillStyle = headGrad;
+    ctx.fill();
+
+    ctx.fillStyle = '#000000';
+    ctx.font = 'bold 16px Tahoma, Arial';
     ctx.textAlign = 'center';
-    ctx.fillText('بازی', 420, y0 + 28);
-    ctx.fillText('برد', 495, y0 + 28);
-    ctx.fillText('مساوی', 575, y0 + 28);
-    ctx.fillText('باخت', 655, y0 + 28);
-    ctx.fillText('تفاضل', 740, y0 + 28);
-    ctx.fillText('امتیاز', 825, y0 + 28);
+    ctx.fillText('رتبه', 72, y0 + 32);
+    ctx.textAlign = 'right';
+    ctx.fillText('نام بازیکن', 345, y0 + 32);
+    ctx.textAlign = 'center';
+    ctx.fillText('بازی', 425, y0 + 32);
+    ctx.fillText('برد', 500, y0 + 32);
+    ctx.fillText('مساوی', 580, y0 + 32);
+    ctx.fillText('باخت', 660, y0 + 32);
+    ctx.fillText('تفاضل', 745, y0 + 32);
+    ctx.fillText('امتیاز', 845, y0 + 32);
 
     standings.forEach((row, i) => {
-      const y = y0 + (i + 1) * rowH;
-      ctx.fillStyle = i % 2 === 0 ? 'rgba(255,255,255,0.03)' : 'rgba(255,255,255,0.07)';
-      ctx.fillRect(30, y, w - 60, rowH);
-      ctx.fillStyle = i < 2 ? '#00e676' : '#ffffff';
+      const y = y0 + (i + 1) * rowH + 2;
+      const isTop2 = i < 2;
+
+      drawRoundRect(ctx, 34, y, w - 68, rowH - 6, 10);
+      ctx.fillStyle = isTop2
+        ? 'rgba(0, 230, 118, 0.11)'
+        : (i % 2 === 0 ? 'rgba(255,255,255,0.03)' : 'rgba(255,255,255,0.06)');
+      ctx.fill();
+
+      if (isTop2) {
+        ctx.fillStyle = '#00e676';
+        ctx.fillRect(36, y + 6, 5, rowH - 18);
+      }
+
+      // Rank Medal / Badge
+      ctx.textAlign = 'center';
+      ctx.font = 'bold 17px Tahoma, Arial';
+      if (i === 0) { ctx.fillStyle = '#ffd000'; ctx.fillText('🥇 1', 72, y + 29); }
+      else if (i === 1) { ctx.fillStyle = '#e2e8f0'; ctx.fillText('🥈 2', 72, y + 29); }
+      else if (i === 2) { ctx.fillStyle = '#f59e0b'; ctx.fillText('🥉 3', 72, y + 29); }
+      else { ctx.fillStyle = '#94a3b8'; ctx.fillText(String(i + 1), 72, y + 29); }
+
+      // Name
+      ctx.fillStyle = isTop2 ? '#ffffff' : '#e2e8f0';
       ctx.font = 'bold 17px Tahoma, Arial';
       ctx.textAlign = 'right';
-      ctx.fillText(String(i + 1), 75, y + 28);
-      ctx.fillStyle = '#ffffff';
-      ctx.fillText(row.name.slice(0, 26), 340, y + 28);
+      ctx.fillText(row.name.slice(0, 24), 345, y + 29);
+
+      // Stats
       ctx.textAlign = 'center';
       ctx.font = '16px Tahoma, Arial';
-      ctx.fillText(String(row.played), 420, y + 28);
-      ctx.fillText(String(row.w), 495, y + 28);
-      ctx.fillText(String(row.d), 575, y + 28);
-      ctx.fillText(String(row.l), 655, y + 28);
-      ctx.fillText(row.gd > 0 ? `+${row.gd}` : String(row.gd), 740, y + 28);
-      ctx.fillStyle = '#ffd000'; ctx.font = 'bold 18px Tahoma, Arial';
-      ctx.fillText(String(row.pts), 825, y + 28);
+      ctx.fillStyle = '#cbd5e1';
+      ctx.fillText(String(row.played), 425, y + 29);
+      ctx.fillStyle = '#00e676';
+      ctx.fillText(String(row.w), 500, y + 29);
+      ctx.fillStyle = '#cbd5e1';
+      ctx.fillText(String(row.d), 580, y + 29);
+      ctx.fillStyle = '#ff6b78';
+      ctx.fillText(String(row.l), 660, y + 29);
+      ctx.fillStyle = row.gd >= 0 ? '#ffe066' : '#ff6b78';
+      ctx.fillText(row.gd > 0 ? `+${row.gd}` : String(row.gd), 745, y + 29);
+
+      // Points Golden Pill
+      drawRoundRect(ctx, 815, y + 6, 60, rowH - 18, 10);
+      ctx.fillStyle = 'rgba(255, 208, 0, 0.2)';
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(255, 208, 0, 0.7)';
+      ctx.lineWidth = 1.2;
+      ctx.stroke();
+      ctx.fillStyle = '#ffd000';
+      ctx.font = 'bold 18px Tahoma, Arial';
+      ctx.fillText(String(row.pts), 845, y + 28);
     });
 
-    ctx.fillStyle = '#94a3b8'; ctx.font = '14px Tahoma, Arial';
-    ctx.textAlign = 'center';
-    ctx.fillText('Wahdat Group eFootball Official Table', w / 2, h - 22);
+    // Footer
+    ctx.fillStyle = '#00e676';
+    ctx.font = 'bold 13px Tahoma, Arial';
+    ctx.textAlign = 'right';
+    ctx.fillText('🟩 نوار سبز: تیم‌های صعودکننده', w - 36, h - 34);
+    ctx.fillStyle = '#ffd000';
+    ctx.textAlign = 'left';
+    ctx.fillText('Wahdat Group Official • eFootball', 36, h - 34);
 
     const a = document.createElement('a');
     a.href = canvas.toDataURL('image/png');
@@ -1856,48 +2181,90 @@
     a.click();
   }
 
-  function exportMatchesImage(title, matchItems) {
+  async function exportMatchesImage(title, matchItems) {
     const league = getActiveLeague();
     if (!league) return;
+    const sponsorImg = await loadSponsorImg(state.bgImage);
     const items = matchItems.slice(0, 24);
-    const w = 900, rowH = 48, headerH = 135, footerH = 55;
+
+    const w = 940, rowH = 62, headerH = 192, footerH = 65;
     const h = headerH + Math.max(items.length, 1) * rowH + footerH;
     const canvas = document.createElement('canvas');
     canvas.width = w; canvas.height = h;
     const ctx = canvas.getContext('2d');
 
-    const grad = ctx.createLinearGradient(0, 0, w, h);
-    grad.addColorStop(0, '#091128'); grad.addColorStop(1, '#060a16');
-    ctx.fillStyle = grad; ctx.fillRect(0, 0, w, h);
-
-    ctx.fillStyle = '#ffd000'; ctx.fillRect(0, 0, w, 6);
-    ctx.textAlign = 'center';
-    ctx.font = 'bold 26px Tahoma, Arial';
-    ctx.fillText(`وحدت گروپ • ${league.name}`, w / 2, 48);
-    ctx.fillStyle = '#00e5ff'; ctx.font = 'bold 19px Tahoma, Arial';
-    ctx.fillText(title, w / 2, 86);
-    ctx.fillStyle = '#00e676'; ctx.font = '14px Tahoma, Arial';
-    ctx.fillText('اسپانسر: شفیق الله محمدی (رییس گروه وحدت)', w / 2, 114);
+    paintPosterBackdrop(ctx, w, h);
+    paintPosterHeader(ctx, w, `وحدت گروپ • ${league.name}`, title, sponsorImg);
 
     items.forEach((m, i) => {
       const y = headerH + i * rowH;
-      ctx.fillStyle = i % 2 === 0 ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.08)';
-      ctx.fillRect(30, y, w - 60, rowH - 4);
-      const p1 = getPlayer(league, m.p1Id)?.name || '---';
-      const p2 = getPlayer(league, m.p2Id)?.name || '---';
-      const s1 = m.s1 !== '' && m.s1 !== undefined ? m.s1 : '-';
-      const s2 = m.s2 !== '' && m.s2 !== undefined ? m.s2 : '-';
+      const p1 = getPlayer(league, m.p1Id)?.name || 'نامشخص';
+      const p2 = getPlayer(league, m.p2Id)?.name || 'نامشخص';
+      const s1 = m.s1 !== '' && m.s1 !== undefined ? String(m.s1) : '';
+      const s2 = m.s2 !== '' && m.s2 !== undefined ? String(m.s2) : '';
+      const hasScore = s1 !== '' && s2 !== '';
 
-      ctx.fillStyle = '#ffffff'; ctx.font = 'bold 16px Tahoma, Arial';
-      ctx.textAlign = 'right'; ctx.fillText(p1.slice(0, 22), 380, y + 29);
-      ctx.textAlign = 'left'; ctx.fillText(p2.slice(0, 22), 520, y + 29);
-      ctx.fillStyle = '#ffd000'; ctx.font = 'bold 20px Tahoma, Arial';
-      ctx.textAlign = 'center'; ctx.fillText(`${s1}  :  ${s2}`, 450, y + 30);
+      // 3D Match Card
+      drawRoundRect(ctx, 28, y, w - 56, rowH - 8, 14);
+      const cardGrad = ctx.createLinearGradient(28, y, w - 28, y + rowH);
+      cardGrad.addColorStop(0, 'rgba(26, 27, 36, 0.96)');
+      cardGrad.addColorStop(1, 'rgba(15, 16, 22, 0.96)');
+      ctx.fillStyle = cardGrad;
+      ctx.fill();
+
+      ctx.strokeStyle = hasScore ? 'rgba(0, 230, 118, 0.65)' : 'rgba(255, 208, 0, 0.38)';
+      ctx.lineWidth = 1.6;
+      ctx.stroke();
+
+      // Match Number Badge
+      drawRoundRect(ctx, w - 82, y + 12, 40, 30, 8);
+      ctx.fillStyle = 'rgba(255, 208, 0, 0.16)';
+      ctx.fill();
+      ctx.fillStyle = '#ffd000';
+      ctx.font = 'bold 14px Tahoma, Arial';
+      ctx.textAlign = 'center';
+      ctx.fillText(`#${i + 1}`, w - 62, y + 32);
+
+      // Player 1 (Right side of center)
+      ctx.fillStyle = (hasScore && parseInt(s1) > parseInt(s2)) ? '#00e676' : '#ffffff';
+      ctx.font = 'bold 18px Tahoma, Arial';
+      ctx.textAlign = 'right';
+      ctx.fillText(p1.slice(0, 22), w - 102, y + 33);
+
+      // Player 2 (Left side of center)
+      ctx.fillStyle = (hasScore && parseInt(s2) > parseInt(s1)) ? '#00e676' : '#ffffff';
+      ctx.textAlign = 'left';
+      ctx.fillText(p2.slice(0, 22), 54, y + 33);
+
+      // Center Score / VS Pill
+      drawRoundRect(ctx, w / 2 - 64, y + 9, 128, 36, 12);
+      if (hasScore) {
+        const pillGrad = ctx.createLinearGradient(w / 2 - 64, y, w / 2 + 64, y);
+        pillGrad.addColorStop(0, '#ffd000');
+        pillGrad.addColorStop(1, '#f59e0b');
+        ctx.fillStyle = pillGrad;
+        ctx.fill();
+        ctx.fillStyle = '#000000';
+        ctx.font = 'bold 21px Tahoma, Arial';
+        ctx.textAlign = 'center';
+        ctx.fillText(`${s1}  :  ${s2}`, w / 2, y + 34);
+      } else {
+        ctx.fillStyle = '#14151e';
+        ctx.fill();
+        ctx.strokeStyle = '#ffd000';
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+        ctx.fillStyle = '#ffd000';
+        ctx.font = 'bold 16px Tahoma, Arial';
+        ctx.textAlign = 'center';
+        ctx.fillText('VS', w / 2, y + 33);
+      }
     });
 
-    ctx.fillStyle = '#94a3b8'; ctx.font = '14px Tahoma, Arial';
+    ctx.fillStyle = '#ffd000';
+    ctx.font = 'bold 14px Tahoma, Arial';
     ctx.textAlign = 'center';
-    ctx.fillText('Wahdat Group eFootball Official Matches', w / 2, h - 18);
+    ctx.fillText('⚽ Wahdat Group Official eFootball Tournament • Sponsor: Shafiqullah Mohammadi', w / 2, h - 28);
 
     const a = document.createElement('a');
     a.href = canvas.toDataURL('image/png');
@@ -1946,9 +2313,10 @@
         <span class="badge badge-green">${t('adminActive')}</span>
         ${langBtn}
         <button class="btn btn-primary" onclick="openModal('createModal')">${t('newLeague')}</button>
-        <button class="btn btn-accent" onclick="document.getElementById('bgFileInput').click()">${t('sponsorPhotoBtn')}</button>
+        <button class="btn btn-accent btn-sm" onclick="document.getElementById('bgFileInput').click()">${t('sponsorPhotoBtn')}</button>
         <input type="file" id="bgFileInput" accept="image/*" class="hidden" onchange="handleBgUpload(event)" />
         ${state.bgImage ? `<button class="btn btn-danger btn-sm" onclick="clearBgImage()">${t('removePhotoBtn')}</button>` : ''}
+        <button class="btn btn-outline btn-sm" onclick="openWaGroupModal()">${t('waGroupSetupBtn')}</button>
         <button class="btn btn-outline btn-sm" onclick="openAnnouncementModal()">${t('announcementBtn')}</button>
         <button class="btn btn-outline btn-sm" onclick="openModal('changePassModal')">${t('changePassBtn')}</button>
         <button class="btn btn-outline btn-sm" onclick="exportBackup()">${t('backupBtn')}</button>
@@ -1977,25 +2345,33 @@
     const box = document.getElementById('sponsorHero');
     const avatarHtml = state.bgImage
       ? `<img src="${state.bgImage}" class="sponsor-avatar" alt="Shafiqullah Mohammadi" />`
-      : `<div class="sponsor-avatar">ش</div>`;
+      : `<div class="sponsor-avatar">W</div>`;
 
     box.innerHTML = `
       <div class="sponsor-profile">
-        <div class="sponsor-avatar-wrap">
+        <div class="sponsor-frame">
           ${avatarHtml}
           <span class="verified-badge">✓</span>
         </div>
         <div class="sponsor-info">
-          <h3>${t('sponsorTitle')} <span class="badge badge-green">Official Sponsor</span></h3>
+          <h3>${t('sponsorTitle')} <span class="badge badge-yellow">Official Sponsor</span></h3>
           <small>${t('sponsorRole')}</small>
-          <span style="font-size: 11px; color: var(--text-muted);">${t('sponsorNote')}</span>
+          <span class="sub-note">${t('sponsorNote')}</span>
         </div>
       </div>
-      ${state.isAdmin && !state.bgImage ? `
-        <button class="btn btn-sm btn-accent no-print" onclick="document.getElementById('bgFileInput').click()">
-          + ${t('sponsorPhotoBtn')}
-        </button>
-      ` : ''}
+
+      <div class="sponsor-actions">
+        ${state.whatsappGroupLink ? `
+          <a href="${escapeHtml(state.whatsappGroupLink)}" target="_blank" rel="noopener" class="btn-wa-group">
+            ${t('joinWaGroupBtn')}
+          </a>
+        ` : ''}
+        ${state.isAdmin && !state.bgImage ? `
+          <button class="btn btn-sm btn-accent no-print" onclick="document.getElementById('bgFileInput').click()">
+            + ${t('sponsorPhotoBtn')}
+          </button>
+        ` : ''}
+      </div>
     `;
   }
 
@@ -2087,7 +2463,7 @@
           ` : `
             <div class="stat-box">
               <small>📊 ${t('statProgress')}</small>
-              <strong style="color: var(--accent);">${fillPct}%</strong>
+              <strong style="color: var(--primary);">${fillPct}%</strong>
             </div>
           `}
           <div class="stat-box">
@@ -2149,7 +2525,7 @@
       <div class="card">
         <div class="card-title">
           <span>${t('regHeader')}</span>
-          <span class="badge badge-cyan">${approved.length} / ${league.capacity} ${t('playersCount')}</span>
+          <span class="badge badge-yellow">${approved.length} / ${league.capacity} ${t('playersCount')}</span>
         </div>
 
         <div class="progress-wrap"><div class="progress-fill" style="width: ${pct}%"></div></div>
@@ -2229,7 +2605,7 @@
     `;
   }
 
-  function renderRegisteredPlayersCard(league, readOnly) {
+  function renderRegisteredPlayersCard(league, isActiveTournament) {
     const q = uiState.playerSearch.trim().toLowerCase();
     const list = getApprovedPlayers(league).filter(p =>
       p.name.toLowerCase().includes(q) || p.phone.includes(q)
@@ -2249,7 +2625,7 @@
                   <th style="width: 50px;">#</th>
                   <th>${t('player')}</th>
                   <th>${t('phoneHeader')}</th>
-                  ${state.isAdmin && !readOnly ? `<th class="no-print" style="width: 140px;">${t('actions')}</th>` : ''}
+                  ${state.isAdmin ? `<th class="no-print" style="width: 190px;">${t('actions')}</th>` : ''}
                 </tr>
               </thead>
               <tbody>
@@ -2258,10 +2634,10 @@
                     <td>${idx + 1}</td>
                     <td style="font-weight: 700;">${escapeHtml(p.name)}</td>
                     <td>${renderPhoneWithWa(p.phone)}</td>
-                    ${state.isAdmin && !readOnly ? `
-                      <td class="no-print">
-                        <button class="btn btn-sm btn-outline" onclick="editPlayer('${p.id}')">${t('edit')}</button>
-                        <button class="btn btn-sm btn-danger" onclick="deletePlayer('${p.id}')">${t('del')}</button>
+                    ${state.isAdmin ? `
+                      <td class="no-print" style="display:flex; gap:6px; flex-wrap:wrap;">
+                        <button class="btn btn-sm btn-accent" onclick="openEditPlayerModal('${p.id}')">${t('editReplace')}</button>
+                        ${!isActiveTournament ? `<button class="btn btn-sm btn-danger" onclick="deletePlayer('${p.id}')">${t('del')}</button>` : ''}
                       </td>
                     ` : ''}
                   </tr>
@@ -2355,7 +2731,7 @@
         <div class="card-title">
           <span>${t('roundMatches')}</span>
           <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
-            <button class="btn btn-sm btn-outline no-print" onclick="exportCurrentKnockoutPng(${isPlayoff}, ${curIdx})">${t('exportMatchesPng')}</button>
+            <button class="btn btn-sm btn-accent no-print" onclick="exportCurrentKnockoutPng(${isPlayoff}, ${curIdx})">${t('exportMatchesPng')}</button>
             <input id="matchSearchInput" type="text" style="max-width: 220px;" placeholder="${t('searchName')}" value="${escapeHtml(uiState.matchSearch)}" oninput="onMatchSearch(this.value)" />
           </div>
         </div>
@@ -2363,7 +2739,7 @@
         ${!state.isAdmin ? `<div class="alert-info">${t('visitorHint')}</div>` : ''}
 
         <div class="tabs no-print">${roundTabs}</div>
-        <h3 style="margin-bottom: 14px; color: var(--accent); font-size: 15px;">${isFinalTab && thirdMatch ? t('finalMatchTitle') : currentRound.name}</h3>
+        <h3 style="margin-bottom: 14px; color: var(--primary); font-size: 15px;">${isFinalTab && thirdMatch ? t('finalMatchTitle') : currentRound.name}</h3>
 
         <div class="matches-grid">
           ${visibleMatches.map(({ m, idx }) => renderKnockoutMatchCard(league, isPlayoff, curIdx, idx, m)).join('')}
@@ -2430,7 +2806,7 @@
     const s1 = m.s1 ?? '', s2 = m.s2 ?? '';
     const isDraw = ready && s1 !== '' && s2 !== '' && s1 === s2;
     return `
-      <div class="match-card ${m.winnerId ? 'finished' : ''}" style="border-color: rgba(255, 208, 0, 0.5);">
+      <div class="match-card ${m.winnerId ? 'finished' : ''}" style="border-color: rgba(255, 208, 0, 0.55);">
         <div class="match-header">
           <span>${t('thirdPlace')}</span>
           <span>${m.winnerId ? t('finished') : (ready ? t('waitingResult') : t('waitingPrev'))}</span>
@@ -2525,7 +2901,7 @@
       <div class="card">
         <div class="card-title">
           <span>${t('standingsTitle')} — ${escapeHtml(group.name)}</span>
-          <button class="btn btn-sm btn-outline no-print" onclick="exportStandingsImage(${gIdx})">${t('exportTablePng')}</button>
+          <button class="btn btn-sm btn-accent no-print" onclick="exportStandingsImage(${gIdx})">${t('exportTablePng')}</button>
         </div>
         <div class="table-wrap">
           <table>
@@ -2537,7 +2913,7 @@
             <tbody>
               ${standings.map((row, idx) => `
                 <tr class="${idx < 2 ? 'qualify-row' : ''}">
-                  <td style="font-weight: 900; color: ${idx < 2 ? 'var(--emerald)' : 'var(--text)'};">${idx + 1}</td>
+                  <td style="font-weight: 900; color: ${idx === 0 ? '#ffd000' : (idx < 2 ? 'var(--emerald)' : 'var(--text)')};">${idx + 1}</td>
                   <td style="font-weight: 700;">${escapeHtml(row.name)}</td>
                   <td>${renderPhoneWithWa(row.phone)}</td>
                   <td>${row.played}</td><td>${row.w}</td><td>${row.d}</td><td>${row.l}</td><td>${row.gf}</td><td>${row.ga}</td>
@@ -2554,7 +2930,7 @@
         <div class="card-title">
           <span>${t('scheduleTitle')} (${escapeHtml(group.name)})</span>
           <div style="display: flex; align-items: center; gap: 8px; flex-wrap:wrap;">
-            <button class="btn btn-sm btn-outline no-print" onclick="exportGroupWeekPng(${gIdx}, ${currentWeek})">${t('exportMatchesPng')}</button>
+            <button class="btn btn-sm btn-accent no-print" onclick="exportGroupWeekPng(${gIdx}, ${currentWeek})">${t('exportMatchesPng')}</button>
             <label style="margin: 0;">${t('weekLabel')}</label>
             <select style="width: auto; min-width: 120px;" onchange="uiState.selectedPointsRound = parseInt(this.value, 10); render();">
               ${Array.from({ length: maxRound }, (_, i) => i + 1).map(r => `<option value="${r}" ${r === currentWeek ? 'selected' : ''}>${r} / ${maxRound}</option>`).join('')}
@@ -2605,10 +2981,11 @@
     const league = getActiveLeague();
     const g = toArray(league.groups)[gIdx];
     const ms = toArray(g.matches).filter(m => m.round === week);
-    exportMatchesImage(`${g.name} — Week ${week}`, ms);
+    exportMatchesImage(`${g.name} — هفته ${week}`, ms);
   }
 
   initFirebase();
 </script>
 </body>
 </html>
+```
