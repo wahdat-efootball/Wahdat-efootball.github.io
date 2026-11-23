@@ -514,6 +514,9 @@
         <input type="password" id="loginPass" placeholder="••••••••" required dir="ltr" />
       </div>
       <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px;" data-t="loginBtn">ورود به پنل مدیریت</button>
+   <button type="button" class="btn btn-outline btn-sm" style="width: 100%; margin-top: 10px;" onclick="forgotAdminPassword()">
+        🔑 فراموشی رمز؟ (ارسال لینک به جیمیل)
+   </button> 
     </form>
   </div>
 </div>
@@ -1193,6 +1196,15 @@
   }
 
   async function adminLogout() { await auth.signOut(); }
+  async function forgotAdminPassword() {
+    if (!confirm(`لینک تغییر رمز عبور به جیمیل مدیر (${ADMIN_EMAIL}) ارسال شود؟`)) return;
+    try {
+      await auth.sendPasswordResetEmail(ADMIN_EMAIL);
+      alert(`✅ لینک تغییر رمز به جیمیل ${ADMIN_EMAIL} ارسال شد! لطفاً بخش Inbox یا Spam جیمیل خود را چک کنید.`);
+    } catch (err) {
+      alert('خطا در ارسال ایمیل: ' + err.message);
+    }
+  }
 
   async function changeAdminPassword(e) {
     e.preventDefault();
